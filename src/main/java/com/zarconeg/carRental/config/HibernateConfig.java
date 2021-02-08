@@ -21,13 +21,14 @@ import java.util.Properties;
 @ComponentScan({"com.zarconeg.carRental.config"})
 @PropertySource(value = {"classpath:application.properties"})
 public class HibernateConfig {
+    @Autowired
     private Environment environment;
 
     @Bean
     public LocalSessionFactoryBean sessionFactory(){
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan(new String[] {"com.zarconeg.carRental.domain"});
+        sessionFactory.setPackagesToScan("com.zarconeg.carRental.domain");
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
@@ -47,6 +48,7 @@ public class HibernateConfig {
         properties.put("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));
         properties.put("hibernate.show_sql", environment.getRequiredProperty("hibernate.show_sql"));
         properties.put("hibernate.format_sql", environment.getRequiredProperty("hibernate.format_sql"));
+        properties.put("hibernate.hbm2ddl.auto", environment.getRequiredProperty("hibernate.hbm2ddl.auto"));
         return properties;
     }
 
