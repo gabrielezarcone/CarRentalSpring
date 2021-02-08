@@ -35,7 +35,7 @@ public class BeanConfig implements WebMvcConfigurer {  // implemento l'interfacc
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {  //Indico la posizione dei file statici (CSS, JS...)
-        registry.addResourceHandler("/static/**").addResourceLocations("/static");
+        registry.addResourceHandler("/static/**").addResourceLocations("/static/");
     }
 
     // Messaggi --------------------------------------------------------

@@ -5,7 +5,7 @@
 
     <!-- Base Definition -->
     <definition name="base" template="/WEB-INF/views/template/base.jsp">
-        <put-attribute name="title" value="" />
+        <put-attribute name="title" value="A" />
         <put-attribute name="header" value="/WEB-INF/views/template/defaultHeader.jsp" />
         <put-attribute name="menu" value="/WEB-INF/views/template/defaultMenu.jsp" />
         <put-attribute name="body" value="" />
