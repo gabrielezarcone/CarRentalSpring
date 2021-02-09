@@ -12,12 +12,16 @@
     <header class="alert alert-success">
         <tiles:insertAttribute name="header"/>
     </header>
-    <section id="sideMenu">
-        <tiles:insertAttribute name="menu"/>
-    </section>
-    <section id="content">
-        <tiles:insertAttribute name="body"/>
-    </section>
+    <div class="container">
+        <div class="row">
+            <section id="sideMenu" class="col-1">
+                <tiles:insertAttribute name="menu"/>
+            </section>
+            <section id="content" class="col-11">
+                <tiles:insertAttribute name="body"/>
+            </section>
+        </div>
+    </div>
     <section id="footer">
         <tiles:insertAttribute name="footer"/>
     </section>
