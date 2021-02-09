@@ -6,7 +6,7 @@
 <head>
     <title> <tiles:getAsString name="title"/> </title>
     <link href="<c:url value='/webjars/bootstrap/5.0.0-beta1/css/bootstrap.min.css' />" rel="stylesheet"/>
-    <link href="<c:url value='/static/style.css' />" rel="stylesheet"/>
+    <link href="<c:url value='/static/css/main.css' />" rel="stylesheet"/>
     <script src="<c:url value='/webjars/bootstrap/5.0.0-beta1/js/bootstrap.min.js' />"></script>
 </head>
 <body>
