@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.UniqueElements;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -37,6 +38,9 @@ public class User {
 
     @Column(name="deleted")
     private boolean deleted;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private Set<Prenotazione> prenotazione;
 
 
     //-------- getter e setter ------------------------------------------------------------------
@@ -102,5 +106,13 @@ public class User {
 
     public void setDeleted(boolean deleted) {
         this.deleted = deleted;
+    }
+
+    public Set<Prenotazione> getPrenotazione() {
+        return prenotazione;
+    }
+
+    public void setPrenotazione(Set<Prenotazione> prenotazione) {
+        this.prenotazione = prenotazione;
     }
 }

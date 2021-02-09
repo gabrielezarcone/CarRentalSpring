@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.UniqueElements;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "auto")
@@ -34,6 +35,9 @@ public class Auto {
     @NotNull
     @Column(name = "immatricolazione", nullable = false)
     private Date immatricolazione;
+
+    @OneToMany(mappedBy = "auto", cascade = CascadeType.ALL)
+    private Set<Prenotazione> prenotazione;
 
 
     //-------- getter e setter ------------------------------------------------------------------
@@ -83,5 +87,13 @@ public class Auto {
 
     public void setImmatricolazione(Date immatricolazione) {
         this.immatricolazione = immatricolazione;
+    }
+
+    public Set<Prenotazione> getPrenotazione() {
+        return prenotazione;
+    }
+
+    public void setPrenotazione(Set<Prenotazione> prenotazione) {
+        this.prenotazione = prenotazione;
     }
 }
