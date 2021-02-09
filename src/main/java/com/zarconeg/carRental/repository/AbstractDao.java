@@ -1,5 +1,6 @@
 package com.zarconeg.carRental.repository;
 
+import com.zarconeg.carRental.domain.User;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 
@@ -39,6 +41,7 @@ public abstract class AbstractDao<PK extends Serializable, EntityClass> {
         getSession().remove(object);
     }
 
+    //--- CRITERIA -----------------------------------------------------
     public CriteriaQuery<EntityClass> createEntityCriteria(){
         CriteriaBuilder builder = getSession().getCriteriaBuilder();
         return builder.createQuery(entityClass);
