@@ -188,9 +188,9 @@
         <configuration>
           <inputPath>${basedir}/src/main/resources/static/sass</inputPath>
           <outputPath>${basedir}/src/main/resources/static/css/</outputPath>
-          <includePath>${basedir}/webjars/bootstrap/</includePath>
           <failOnError>true</failOnError>
           <inputSyntax>scss</inputSyntax>
+          <enableClasspathAwareImporter>true</enableClasspathAwareImporter> <!-- per fare @import dei webjar -->
         </configuration>
       </plugin>
     </plugins>
