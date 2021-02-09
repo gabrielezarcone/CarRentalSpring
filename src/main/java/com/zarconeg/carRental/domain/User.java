@@ -1,5 +1,7 @@
 package com.zarconeg.carRental.domain;
 
+import org.hibernate.validator.constraints.UniqueElements;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -15,6 +17,7 @@ public class User {
     @Column(name="admin")
     private boolean admin;
 
+    @UniqueElements
     @NotNull
     @Column(name="username", nullable = false, unique = true)
     private String username;
