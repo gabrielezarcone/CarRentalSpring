@@ -15,9 +15,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name="admin")
-    private boolean admin;
-
     @UniqueElements
     @NotNull
     @Column(name="username", nullable = false, unique = true)
@@ -39,8 +36,13 @@ public class User {
     @Column(name="deleted")
     private boolean deleted;
 
+
+    //-------- relazioni ------------------------------------------------------------------
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Prenotazione> prenotazione;
+
+   @ManyToMany
+   private Set<Ruolo> ruoli;
 
 
     //-------- getter e setter ------------------------------------------------------------------
@@ -50,14 +52,6 @@ public class User {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public boolean isAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
     }
 
     public String getUsername() {
@@ -114,5 +108,13 @@ public class User {
 
     public void setPrenotazione(Set<Prenotazione> prenotazione) {
         this.prenotazione = prenotazione;
+    }
+
+    public Set<Ruolo> getRuoli() {
+        return ruoli;
+    }
+
+    public void setRuoli(Set<Ruolo> ruoli) {
+        this.ruoli = ruoli;
     }
 }
