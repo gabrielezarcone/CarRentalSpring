@@ -2844,7 +2844,7 @@ textarea.form-control-lg {
 .tab-content > .active {
   display: block; }
 
-.navbar {
+.navbar, .navbarHeader {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -2852,13 +2852,19 @@ textarea.form-control-lg {
   justify-content: space-between;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem; }
-  .navbar > .container,
+  .navbar > .container, .navbarHeader > .container,
   .navbar > .container-fluid,
+  .navbarHeader > .container-fluid,
   .navbar > .container-sm,
+  .navbarHeader > .container-sm,
   .navbar > .container-md,
+  .navbarHeader > .container-md,
   .navbar > .container-lg,
+  .navbarHeader > .container-lg,
   .navbar > .container-xl,
-  .navbar > .container-xxl {
+  .navbarHeader > .container-xl,
+  .navbar > .container-xxl,
+  .navbarHeader > .container-xxl {
     display: flex;
     flex-wrap: inherit;
     align-items: center;
@@ -2920,19 +2926,19 @@ textarea.form-control-lg {
   background-size: 100%; }
 
 @media (min-width: 576px) {
-  .navbar-expand-sm {
+  .navbar-expand-sm, .navbarHeader {
     flex-wrap: nowrap;
     justify-content: flex-start; }
-    .navbar-expand-sm .navbar-nav {
+    .navbar-expand-sm .navbar-nav, .navbarHeader .navbar-nav {
       flex-direction: row; }
-      .navbar-expand-sm .navbar-nav .dropdown-menu {
+      .navbar-expand-sm .navbar-nav .dropdown-menu, .navbarHeader .navbar-nav .dropdown-menu {
         position: absolute; }
-      .navbar-expand-sm .navbar-nav .nav-link {
+      .navbar-expand-sm .navbar-nav .nav-link, .navbarHeader .navbar-nav .nav-link {
         padding-right: 0.5rem;
         padding-left: 0.5rem; }
-    .navbar-expand-sm .navbar-collapse {
+    .navbar-expand-sm .navbar-collapse, .navbarHeader .navbar-collapse {
       display: flex !important; }
-    .navbar-expand-sm .navbar-toggler {
+    .navbar-expand-sm .navbar-toggler, .navbarHeader .navbar-toggler {
       display: none; } }
 
 @media (min-width: 768px) {
@@ -3044,32 +3050,33 @@ textarea.form-control-lg {
   .navbar-light .navbar-text a:focus {
     color: rgba(0, 0, 0, 0.9); }
 
-.navbar-dark .navbar-brand {
+.navbar-dark .navbar-brand, .navbarHeader .navbar-brand {
   color: #fff; }
-  .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
+  .navbar-dark .navbar-brand:hover, .navbarHeader .navbar-brand:hover, .navbar-dark .navbar-brand:focus, .navbarHeader .navbar-brand:focus {
     color: #fff; }
 
-.navbar-dark .navbar-nav .nav-link {
+.navbar-dark .navbar-nav .nav-link, .navbarHeader .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.55); }
-  .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+  .navbar-dark .navbar-nav .nav-link:hover, .navbarHeader .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus, .navbarHeader .navbar-nav .nav-link:focus {
     color: rgba(255, 255, 255, 0.75); }
-  .navbar-dark .navbar-nav .nav-link.disabled {
+  .navbar-dark .navbar-nav .nav-link.disabled, .navbarHeader .navbar-nav .nav-link.disabled {
     color: rgba(255, 255, 255, 0.25); }
 
-.navbar-dark .navbar-nav .show > .nav-link,
-.navbar-dark .navbar-nav .nav-link.active {
+.navbar-dark .navbar-nav .show > .nav-link, .navbarHeader .navbar-nav .show > .nav-link,
+.navbar-dark .navbar-nav .nav-link.active,
+.navbarHeader .navbar-nav .nav-link.active {
   color: #fff; }
 
-.navbar-dark .navbar-toggler {
+.navbar-dark .navbar-toggler, .navbarHeader .navbar-toggler {
   color: rgba(255, 255, 255, 0.55);
   border-color: rgba(255, 255, 255, 0.1); }
 
-.navbar-dark .navbar-toggler-icon {
+.navbar-dark .navbar-toggler-icon, .navbarHeader .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
 
-.navbar-dark .navbar-text {
+.navbar-dark .navbar-text, .navbarHeader .navbar-text {
   color: rgba(255, 255, 255, 0.55); }
-  .navbar-dark .navbar-text a,
+  .navbar-dark .navbar-text a, .navbarHeader .navbar-text a,
   .navbar-dark .navbar-text a:hover,
   .navbar-dark .navbar-text a:focus {
     color: #fff; }
@@ -5451,7 +5458,7 @@ textarea.form-control-lg {
 .lh-lg {
   line-height: 2 !important; }
 
-.bg-primary {
+.bg-primary, .navbarHeader {
   background-color: #0d6efd !important; }
 
 .bg-secondary {
@@ -7324,9 +7331,5 @@ textarea.form-control-lg {
     display: inline-flex !important; }
   .d-print-none {
     display: none !important; } }
-
-body {
-  font: 100% Helvetica, sans-serif;
-  color: #335; }
 
 /*# sourceMappingURL=../../../../../target/main.css.map */
