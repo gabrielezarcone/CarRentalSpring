@@ -11,12 +11,29 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
 
 public abstract class AbstractDao<PK extends Serializable, EntityClass> {
+
     private final Class<EntityClass> entityClass;
 
     @Autowired
     private SessionFactory sessionFactory;
+
+    // tupla di root e query per utilizzare i criteria senza duplicare il codice
+    protected class CriteriaContainer{
+        public CriteriaBuilder builder;
+        public CriteriaQuery<EntityClass> query;
+        public Root<EntityClass> root;
+        public CriteriaContainer(){
+            this.builder = getSession().getCriteriaBuilder();
+            this.query = builder.createQuery(entityClass);
+            this.root = query.from(entityClass);
+        }
+    }
+
+
+    //---------------------------------------------------------------------------------------------
 
     @SuppressWarnings("unchecked") // Il compilatore non emetterà Warning quando uso dei tipi RAW
     public AbstractDao(){
@@ -41,9 +58,13 @@ public abstract class AbstractDao<PK extends Serializable, EntityClass> {
         getSession().remove(object);
     }
 
+    public List<EntityClass> getList(){
+        return getSession().createQuery(selectCriteria()).getResultList();
+    }
+
     //--- CRITERIA -----------------------------------------------------
-    public CriteriaQuery<EntityClass> createEntityCriteria(){
-        CriteriaBuilder builder = getSession().getCriteriaBuilder();
-        return builder.createQuery(entityClass);
+    public CriteriaQuery<EntityClass> selectCriteria(){
+        CriteriaContainer cc = new CriteriaContainer();
+        return cc.query.select(cc.root);
     }
 }
