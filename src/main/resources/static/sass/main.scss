@@ -1,7 +1,20 @@
+//----- SCSS che modifica le classi Bootstrap------------------------------------------------------------------------------------------------------
+$success: #00ff8a;
+
+
+
+//----- Bootstrap importato grazie alla funzione enableClasspathAwareImporter del plugin libsass-maven-plugin--------------------------------------
+@import 'bootstrap/scss/bootstrap';
+
+
+
+//----- SCSS che usa le classi Bootstrap ----------------------------------------------------------------------------------------------------------
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #335;
 
-body {
-  font: 100% $font-stack;
-  color: $primary-color;
+.navbarHeader{
+  @extend .navbar;
+  @extend .navbar-expand-sm;
+  @extend .navbar-dark;
+  @extend .bg-primary;
 }
