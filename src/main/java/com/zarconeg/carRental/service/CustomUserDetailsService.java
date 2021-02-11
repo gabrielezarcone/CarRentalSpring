@@ -33,10 +33,9 @@ public class CustomUserDetailsService implements UserDetailsService { // l'inter
             builder =  org.springframework.security.core.userdetails.User.withUsername(ssoId);
             builder.password(user.getPassword());
             builder.disabled(user.isDeleted());
-/*          TODO implementare una relazione Autorizzazioni con User per poter settare le autorizzazioni come segue
-            String[] authorities = user.getAuthorities()
-                    .stream().map(a -> a.getAuthority()).toArray(String[]::new);
-            builder.authorities(authorities);*/
+            String[] authorities = user.getRuoli()
+                    .stream().map(a -> a.getRuolo()).toArray(String[]::new);
+            builder.authorities(authorities);
             return builder.build();
         }
     }

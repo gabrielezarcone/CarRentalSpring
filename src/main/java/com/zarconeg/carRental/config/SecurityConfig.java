@@ -31,10 +31,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http)throws Exception{
         http.authorizeRequests()
                 .antMatchers( "/home").permitAll()
-                .antMatchers("/","/admin/**").access("hasRole('ADMIN')")
-                .antMatchers("/customer/**").access("hasRole('ADMIN') and hasRole('CUSTOMER')")
-                .and().formLogin()
-                .and().exceptionHandling().accessDeniedPage("/Access_Denied");
+                .antMatchers("/","/admin/**").access("hasRole('ADMIN')") // NB nel db deve essere salvato come ROLE_ADMIN
+                .antMatchers("/customer/**").access("hasRole('ADMIN') or hasRole('CUSTOMER')")
+                .and().formLogin();
+                //.and().exceptionHandling().accessDeniedPage("/Access_Denied");
     }
 
 
