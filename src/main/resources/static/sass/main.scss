@@ -12,9 +12,33 @@ $success: #00ff8a;
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #335;
 
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .navbarHeader{
   @extend .navbar;
   @extend .navbar-expand-sm;
   @extend .navbar-dark;
   @extend .bg-primary;
+}
+
+#homeChooser{
+  @extend .text-center;
+  @extend .d-grid;
+  @extend .gap-2;
+  @extend .mt-4;
+}
+.chooseBtn{
+  @extend .btn;
+  @extend .btn-lg;
+}
+#homeChooser .chooseAdminBtn{
+  @extend .chooseBtn;
+  @extend .btn-primary;
+}
+#homeChooser .chooseCustomerBtn{
+  @extend .chooseBtn;
+  @extend .btn-secondary;
 }

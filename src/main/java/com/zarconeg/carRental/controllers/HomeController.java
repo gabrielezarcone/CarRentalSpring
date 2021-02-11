@@ -19,10 +19,6 @@ public class HomeController {
 
     @RequestMapping()
     public ModelAndView renderHomePage(ModelMap model){
-        List<User> userList = userService.getList();
-        User admin = userService.getByUsername("admin");
-        model.addAttribute("adminUser", admin.getUsername());
-        model.addAttribute("usersList", userList);
         return new ModelAndView("home", model);
     }
 }

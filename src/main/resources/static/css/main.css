@@ -1743,7 +1743,7 @@ textarea.form-control-lg {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none; }
-  .btn-check[disabled] + .btn, .btn-check:disabled + .btn {
+  .btn-check[disabled] + .btn, .btn-check[disabled] + .chooseBtn, #homeChooser .btn-check[disabled] + .chooseCustomerBtn, #homeChooser .btn-check[disabled] + .chooseAdminBtn, .btn-check:disabled + .btn, .btn-check:disabled + .chooseBtn, #homeChooser .btn-check:disabled + .chooseCustomerBtn, #homeChooser .btn-check:disabled + .chooseAdminBtn {
     pointer-events: none;
     filter: none;
     opacity: 0.65; }
@@ -1866,10 +1866,10 @@ textarea.form-control-lg {
   .input-group > .form-control:focus,
   .input-group > .form-select:focus {
     z-index: 3; }
-  .input-group .btn {
+  .input-group .btn, .input-group .chooseBtn, .input-group #homeChooser .chooseCustomerBtn, #homeChooser .input-group .chooseCustomerBtn, .input-group #homeChooser .chooseAdminBtn, #homeChooser .input-group .chooseAdminBtn {
     position: relative;
     z-index: 2; }
-    .input-group .btn:focus {
+    .input-group .btn:focus, .input-group .chooseBtn:focus, .input-group #homeChooser .chooseCustomerBtn:focus, #homeChooser .input-group .chooseCustomerBtn:focus, .input-group #homeChooser .chooseAdminBtn:focus, #homeChooser .input-group .chooseAdminBtn:focus {
       z-index: 3; }
 
 .input-group-text {
@@ -1889,7 +1889,10 @@ textarea.form-control-lg {
 .input-group-lg > .form-control,
 .input-group-lg > .form-select,
 .input-group-lg > .input-group-text,
-.input-group-lg > .btn {
+.input-group-lg > .btn,
+.input-group-lg > .chooseBtn,
+#homeChooser .input-group-lg > .chooseCustomerBtn,
+#homeChooser .input-group-lg > .chooseAdminBtn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   border-radius: 0.3rem; }
@@ -1897,7 +1900,10 @@ textarea.form-control-lg {
 .input-group-sm > .form-control,
 .input-group-sm > .form-select,
 .input-group-sm > .input-group-text,
-.input-group-sm > .btn {
+.input-group-sm > .btn,
+.input-group-sm > .chooseBtn,
+#homeChooser .input-group-sm > .chooseCustomerBtn,
+#homeChooser .input-group-sm > .chooseAdminBtn {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   border-radius: 0.2rem; }
@@ -2047,7 +2053,7 @@ textarea.form-control-lg {
 .form-check-inline .form-check-input ~ .invalid-feedback {
   margin-left: .5em; }
 
-.btn {
+.btn, .chooseBtn, #homeChooser .chooseCustomerBtn, #homeChooser .chooseAdminBtn {
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
@@ -2064,61 +2070,61 @@ textarea.form-control-lg {
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media (prefers-reduced-motion: reduce) {
-    .btn {
+    .btn, .chooseBtn, #homeChooser .chooseCustomerBtn, #homeChooser .chooseAdminBtn {
       transition: none; } }
-  .btn:hover {
+  .btn:hover, .chooseBtn:hover, #homeChooser .chooseCustomerBtn:hover, #homeChooser .chooseAdminBtn:hover {
     color: #212529; }
-  .btn-check:focus + .btn, .btn:focus {
+  .btn-check:focus + .btn, .btn-check:focus + .chooseBtn, #homeChooser .btn-check:focus + .chooseCustomerBtn, #homeChooser .btn-check:focus + .chooseAdminBtn, .btn:focus, .chooseBtn:focus, #homeChooser .chooseCustomerBtn:focus, #homeChooser .chooseAdminBtn:focus {
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); }
-  .btn:disabled, .btn.disabled, fieldset:disabled .btn {
+  .btn:disabled, .chooseBtn:disabled, #homeChooser .chooseCustomerBtn:disabled, #homeChooser .chooseAdminBtn:disabled, .btn.disabled, .disabled.chooseBtn, #homeChooser .disabled.chooseCustomerBtn, #homeChooser .disabled.chooseAdminBtn, fieldset:disabled .btn, fieldset:disabled .chooseBtn, fieldset:disabled #homeChooser .chooseCustomerBtn, #homeChooser fieldset:disabled .chooseCustomerBtn, fieldset:disabled #homeChooser .chooseAdminBtn, #homeChooser fieldset:disabled .chooseAdminBtn {
     pointer-events: none;
     opacity: 0.65; }
 
-.btn-primary {
+.btn-primary, #homeChooser .chooseAdminBtn {
   color: #fff;
   background-color: #0d6efd;
   border-color: #0d6efd; }
-  .btn-primary:hover {
+  .btn-primary:hover, #homeChooser .chooseAdminBtn:hover {
     color: #fff;
     background-color: #0b5ed7;
     border-color: #0a58ca; }
-  .btn-check:focus + .btn-primary, .btn-primary:focus {
+  .btn-check:focus + .btn-primary, #homeChooser .btn-check:focus + .chooseAdminBtn, .btn-primary:focus, #homeChooser .chooseAdminBtn:focus {
     color: #fff;
     background-color: #0b5ed7;
     border-color: #0a58ca;
     box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5); }
-  .btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
+  .btn-check:checked + .btn-primary, #homeChooser .btn-check:checked + .chooseAdminBtn, .btn-check:active + .btn-primary, #homeChooser .btn-check:active + .chooseAdminBtn, .btn-primary:active, #homeChooser .chooseAdminBtn:active, .btn-primary.active, #homeChooser .active.chooseAdminBtn, .show > .btn-primary.dropdown-toggle, #homeChooser .show > .dropdown-toggle.chooseAdminBtn {
     color: #fff;
     background-color: #0a58ca;
     border-color: #0a53be; }
-    .btn-check:checked + .btn-primary:focus, .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .show > .btn-primary.dropdown-toggle:focus {
+    .btn-check:checked + .btn-primary:focus, #homeChooser .btn-check:checked + .chooseAdminBtn:focus, .btn-check:active + .btn-primary:focus, #homeChooser .btn-check:active + .chooseAdminBtn:focus, .btn-primary:active:focus, #homeChooser .chooseAdminBtn:active:focus, .btn-primary.active:focus, #homeChooser .active.chooseAdminBtn:focus, .show > .btn-primary.dropdown-toggle:focus, #homeChooser .show > .dropdown-toggle.chooseAdminBtn:focus {
       box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5); }
-  .btn-primary:disabled, .btn-primary.disabled {
+  .btn-primary:disabled, #homeChooser .chooseAdminBtn:disabled, .btn-primary.disabled, #homeChooser .disabled.chooseAdminBtn {
     color: #fff;
     background-color: #0d6efd;
     border-color: #0d6efd; }
 
-.btn-secondary {
+.btn-secondary, #homeChooser .chooseCustomerBtn {
   color: #fff;
   background-color: #6c757d;
   border-color: #6c757d; }
-  .btn-secondary:hover {
+  .btn-secondary:hover, #homeChooser .chooseCustomerBtn:hover {
     color: #fff;
     background-color: #5c636a;
     border-color: #565e64; }
-  .btn-check:focus + .btn-secondary, .btn-secondary:focus {
+  .btn-check:focus + .btn-secondary, #homeChooser .btn-check:focus + .chooseCustomerBtn, .btn-secondary:focus, #homeChooser .chooseCustomerBtn:focus {
     color: #fff;
     background-color: #5c636a;
     border-color: #565e64;
     box-shadow: 0 0 0 0.25rem rgba(130, 138, 145, 0.5); }
-  .btn-check:checked + .btn-secondary, .btn-check:active + .btn-secondary, .btn-secondary:active, .btn-secondary.active, .show > .btn-secondary.dropdown-toggle {
+  .btn-check:checked + .btn-secondary, #homeChooser .btn-check:checked + .chooseCustomerBtn, .btn-check:active + .btn-secondary, #homeChooser .btn-check:active + .chooseCustomerBtn, .btn-secondary:active, #homeChooser .chooseCustomerBtn:active, .btn-secondary.active, #homeChooser .active.chooseCustomerBtn, .show > .btn-secondary.dropdown-toggle, #homeChooser .show > .dropdown-toggle.chooseCustomerBtn {
     color: #fff;
     background-color: #565e64;
     border-color: #51585e; }
-    .btn-check:checked + .btn-secondary:focus, .btn-check:active + .btn-secondary:focus, .btn-secondary:active:focus, .btn-secondary.active:focus, .show > .btn-secondary.dropdown-toggle:focus {
+    .btn-check:checked + .btn-secondary:focus, #homeChooser .btn-check:checked + .chooseCustomerBtn:focus, .btn-check:active + .btn-secondary:focus, #homeChooser .btn-check:active + .chooseCustomerBtn:focus, .btn-secondary:active:focus, #homeChooser .chooseCustomerBtn:active:focus, .btn-secondary.active:focus, #homeChooser .active.chooseCustomerBtn:focus, .show > .btn-secondary.dropdown-toggle:focus, #homeChooser .show > .dropdown-toggle.chooseCustomerBtn:focus {
       box-shadow: 0 0 0 0.25rem rgba(130, 138, 145, 0.5); }
-  .btn-secondary:disabled, .btn-secondary.disabled {
+  .btn-secondary:disabled, #homeChooser .chooseCustomerBtn:disabled, .btn-secondary.disabled, #homeChooser .disabled.chooseCustomerBtn {
     color: #fff;
     background-color: #6c757d;
     border-color: #6c757d; }
@@ -2428,12 +2434,12 @@ textarea.form-control-lg {
   .btn-link:disabled, .btn-link.disabled {
     color: #6c757d; }
 
-.btn-lg, .btn-group-lg > .btn {
+.btn-lg, .chooseBtn, #homeChooser .chooseCustomerBtn, #homeChooser .chooseAdminBtn, .btn-group-lg > .btn, .btn-group-lg > .chooseBtn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   border-radius: 0.3rem; }
 
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .chooseBtn, #homeChooser .btn-group-sm > .chooseCustomerBtn, #homeChooser .btn-group-sm > .chooseAdminBtn {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   border-radius: 0.2rem; }
@@ -2701,22 +2707,58 @@ textarea.form-control-lg {
   position: relative;
   display: inline-flex;
   vertical-align: middle; }
-  .btn-group > .btn,
-  .btn-group-vertical > .btn {
+  .btn-group > .btn, .btn-group > .chooseBtn, #homeChooser .btn-group > .chooseCustomerBtn, #homeChooser .btn-group > .chooseAdminBtn,
+  .btn-group-vertical > .btn,
+  .btn-group-vertical > .chooseBtn,
+  #homeChooser .btn-group-vertical > .chooseCustomerBtn,
+  #homeChooser .btn-group-vertical > .chooseAdminBtn {
     position: relative;
     flex: 1 1 auto; }
-  .btn-group > .btn-check:checked + .btn,
+  .btn-group > .btn-check:checked + .btn, .btn-group > .btn-check:checked + .chooseBtn, #homeChooser .btn-group > .btn-check:checked + .chooseCustomerBtn, #homeChooser .btn-group > .btn-check:checked + .chooseAdminBtn,
   .btn-group > .btn-check:focus + .btn,
+  .btn-group > .btn-check:focus + .chooseBtn,
+  #homeChooser .btn-group > .btn-check:focus + .chooseCustomerBtn,
+  #homeChooser .btn-group > .btn-check:focus + .chooseAdminBtn,
   .btn-group > .btn:hover,
+  .btn-group > .chooseBtn:hover,
+  #homeChooser .btn-group > .chooseCustomerBtn:hover,
+  #homeChooser .btn-group > .chooseAdminBtn:hover,
   .btn-group > .btn:focus,
+  .btn-group > .chooseBtn:focus,
+  #homeChooser .btn-group > .chooseCustomerBtn:focus,
+  #homeChooser .btn-group > .chooseAdminBtn:focus,
   .btn-group > .btn:active,
+  .btn-group > .chooseBtn:active,
+  #homeChooser .btn-group > .chooseCustomerBtn:active,
+  #homeChooser .btn-group > .chooseAdminBtn:active,
   .btn-group > .btn.active,
+  .btn-group > .active.chooseBtn,
+  #homeChooser .btn-group > .active.chooseCustomerBtn,
+  #homeChooser .btn-group > .active.chooseAdminBtn,
   .btn-group-vertical > .btn-check:checked + .btn,
+  .btn-group-vertical > .btn-check:checked + .chooseBtn,
+  #homeChooser .btn-group-vertical > .btn-check:checked + .chooseCustomerBtn,
+  #homeChooser .btn-group-vertical > .btn-check:checked + .chooseAdminBtn,
   .btn-group-vertical > .btn-check:focus + .btn,
+  .btn-group-vertical > .btn-check:focus + .chooseBtn,
+  #homeChooser .btn-group-vertical > .btn-check:focus + .chooseCustomerBtn,
+  #homeChooser .btn-group-vertical > .btn-check:focus + .chooseAdminBtn,
   .btn-group-vertical > .btn:hover,
+  .btn-group-vertical > .chooseBtn:hover,
+  #homeChooser .btn-group-vertical > .chooseCustomerBtn:hover,
+  #homeChooser .btn-group-vertical > .chooseAdminBtn:hover,
   .btn-group-vertical > .btn:focus,
+  .btn-group-vertical > .chooseBtn:focus,
+  #homeChooser .btn-group-vertical > .chooseCustomerBtn:focus,
+  #homeChooser .btn-group-vertical > .chooseAdminBtn:focus,
   .btn-group-vertical > .btn:active,
-  .btn-group-vertical > .btn.active {
+  .btn-group-vertical > .chooseBtn:active,
+  #homeChooser .btn-group-vertical > .chooseCustomerBtn:active,
+  #homeChooser .btn-group-vertical > .chooseAdminBtn:active,
+  .btn-group-vertical > .btn.active,
+  .btn-group-vertical > .active.chooseBtn,
+  #homeChooser .btn-group-vertical > .active.chooseCustomerBtn,
+  #homeChooser .btn-group-vertical > .active.chooseAdminBtn {
     z-index: 1; }
 
 .btn-toolbar {
@@ -2726,18 +2768,27 @@ textarea.form-control-lg {
   .btn-toolbar .input-group {
     width: auto; }
 
-.btn-group > .btn:not(:first-child),
+.btn-group > .btn:not(:first-child), .btn-group > .chooseBtn:not(:first-child), #homeChooser .btn-group > .chooseCustomerBtn:not(:first-child), #homeChooser .btn-group > .chooseAdminBtn:not(:first-child),
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px; }
 
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle),
-.btn-group > .btn-group:not(:last-child) > .btn {
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .chooseBtn:not(:last-child):not(.dropdown-toggle), #homeChooser .btn-group > .chooseCustomerBtn:not(:last-child):not(.dropdown-toggle), #homeChooser .btn-group > .chooseAdminBtn:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn-group:not(:last-child) > .btn,
+.btn-group > .btn-group:not(:last-child) > .chooseBtn,
+#homeChooser .btn-group > .btn-group:not(:last-child) > .chooseCustomerBtn,
+#homeChooser .btn-group > .btn-group:not(:last-child) > .chooseAdminBtn {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-.btn-group > .btn:nth-child(n + 3),
+.btn-group > .btn:nth-child(n + 3), .btn-group > .chooseBtn:nth-child(n + 3), #homeChooser .btn-group > .chooseCustomerBtn:nth-child(n + 3), #homeChooser .btn-group > .chooseAdminBtn:nth-child(n + 3),
 .btn-group > :not(.btn-check) + .btn,
-.btn-group > .btn-group:not(:first-child) > .btn {
+.btn-group > :not(.btn-check) + .chooseBtn,
+#homeChooser .btn-group > :not(.btn-check) + .chooseCustomerBtn,
+#homeChooser .btn-group > :not(.btn-check) + .chooseAdminBtn,
+.btn-group > .btn-group:not(:first-child) > .btn,
+.btn-group > .btn-group:not(:first-child) > .chooseBtn,
+#homeChooser .btn-group > .btn-group:not(:first-child) > .chooseCustomerBtn,
+#homeChooser .btn-group > .btn-group:not(:first-child) > .chooseAdminBtn {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
@@ -2749,11 +2800,11 @@ textarea.form-control-lg {
   .dropstart .dropdown-toggle-split::before {
     margin-right: 0; }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > .chooseBtn + .dropdown-toggle-split, #homeChooser .btn-group-sm > .chooseCustomerBtn + .dropdown-toggle-split, #homeChooser .btn-group-sm > .chooseAdminBtn + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem; }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .chooseBtn + .dropdown-toggle-split, #homeChooser .chooseCustomerBtn + .dropdown-toggle-split, #homeChooser .chooseAdminBtn + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > .chooseBtn + .dropdown-toggle-split, #homeChooser .btn-group-lg > .chooseCustomerBtn + .dropdown-toggle-split, #homeChooser .btn-group-lg > .chooseAdminBtn + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem; }
 
@@ -2761,18 +2812,24 @@ textarea.form-control-lg {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center; }
-  .btn-group-vertical > .btn,
+  .btn-group-vertical > .btn, .btn-group-vertical > .chooseBtn, #homeChooser .btn-group-vertical > .chooseCustomerBtn, #homeChooser .btn-group-vertical > .chooseAdminBtn,
   .btn-group-vertical > .btn-group {
     width: 100%; }
-  .btn-group-vertical > .btn:not(:first-child),
+  .btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .chooseBtn:not(:first-child), #homeChooser .btn-group-vertical > .chooseCustomerBtn:not(:first-child), #homeChooser .btn-group-vertical > .chooseAdminBtn:not(:first-child),
   .btn-group-vertical > .btn-group:not(:first-child) {
     margin-top: -1px; }
-  .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle),
-  .btn-group-vertical > .btn-group:not(:last-child) > .btn {
+  .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .chooseBtn:not(:last-child):not(.dropdown-toggle), #homeChooser .btn-group-vertical > .chooseCustomerBtn:not(:last-child):not(.dropdown-toggle), #homeChooser .btn-group-vertical > .chooseAdminBtn:not(:last-child):not(.dropdown-toggle),
+  .btn-group-vertical > .btn-group:not(:last-child) > .btn,
+  .btn-group-vertical > .btn-group:not(:last-child) > .chooseBtn,
+  #homeChooser .btn-group-vertical > .btn-group:not(:last-child) > .chooseCustomerBtn,
+  #homeChooser .btn-group-vertical > .btn-group:not(:last-child) > .chooseAdminBtn {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0; }
-  .btn-group-vertical > .btn ~ .btn,
-  .btn-group-vertical > .btn-group:not(:first-child) > .btn {
+  .btn-group-vertical > .btn ~ .btn, .btn-group-vertical > .chooseBtn ~ .btn, #homeChooser .btn-group-vertical > .chooseCustomerBtn ~ .btn, #homeChooser .btn-group-vertical > .chooseAdminBtn ~ .btn, .btn-group-vertical > .btn ~ .chooseBtn, #homeChooser .btn-group-vertical > .btn ~ .chooseCustomerBtn, #homeChooser .btn-group-vertical > .btn ~ .chooseAdminBtn, .btn-group-vertical > .chooseBtn ~ .chooseBtn, #homeChooser .btn-group-vertical > .chooseCustomerBtn ~ .chooseBtn, #homeChooser .btn-group-vertical > .chooseBtn ~ .chooseCustomerBtn, #homeChooser .btn-group-vertical > .chooseCustomerBtn ~ .chooseCustomerBtn, #homeChooser .btn-group-vertical > .chooseAdminBtn ~ .chooseBtn, #homeChooser .btn-group-vertical > .chooseAdminBtn ~ .chooseCustomerBtn, #homeChooser .btn-group-vertical > .chooseBtn ~ .chooseAdminBtn, #homeChooser .btn-group-vertical > .chooseCustomerBtn ~ .chooseAdminBtn, #homeChooser .btn-group-vertical > .chooseAdminBtn ~ .chooseAdminBtn,
+  .btn-group-vertical > .btn-group:not(:first-child) > .btn,
+  .btn-group-vertical > .btn-group:not(:first-child) > .chooseBtn,
+  #homeChooser .btn-group-vertical > .btn-group:not(:first-child) > .chooseCustomerBtn,
+  #homeChooser .btn-group-vertical > .btn-group:not(:first-child) > .chooseAdminBtn {
     border-top-left-radius: 0;
     border-top-right-radius: 0; }
 
@@ -3407,7 +3464,7 @@ textarea.form-control-lg {
   .badge:empty {
     display: none; }
 
-.btn .badge {
+.btn .badge, .chooseBtn .badge, #homeChooser .chooseCustomerBtn .badge, #homeChooser .chooseAdminBtn .badge {
   position: relative;
   top: -1px; }
 
@@ -4685,7 +4742,7 @@ textarea.form-control-lg {
 .d-block {
   display: block !important; }
 
-.d-grid {
+.d-grid, #homeChooser {
   display: grid !important; }
 
 .d-table {
@@ -4943,7 +5000,7 @@ textarea.form-control-lg {
 .gap-1 {
   gap: 0.25rem !important; }
 
-.gap-2 {
+.gap-2, #homeChooser {
   gap: 0.5rem !important; }
 
 .gap-3 {
@@ -5137,7 +5194,7 @@ textarea.form-control-lg {
 .mt-3 {
   margin-top: 1rem !important; }
 
-.mt-4 {
+.mt-4, #homeChooser {
   margin-top: 1.5rem !important; }
 
 .mt-5 {
@@ -5401,7 +5458,7 @@ textarea.form-control-lg {
 .text-end {
   text-align: right !important; }
 
-.text-center {
+.text-center, #homeChooser {
   text-align: center !important; }
 
 .text-primary {
@@ -7331,5 +7388,9 @@ textarea.form-control-lg {
     display: inline-flex !important; }
   .d-print-none {
     display: none !important; } }
+
+* {
+  margin: 0;
+  padding: 0; }
 
 /*# sourceMappingURL=../../../../../target/main.css.map */
