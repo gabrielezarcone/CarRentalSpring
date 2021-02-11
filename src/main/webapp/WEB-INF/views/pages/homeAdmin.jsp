@@ -11,6 +11,7 @@
                 <th scope="col">Cognome</th>
                 <th scope="col">Data di nascita</th>
                 <th scope="col">Stato</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -21,7 +22,7 @@
                     <td>${user.surname}</td>
                     <td> <fmt:formatDate value="${user.birthDate}" type="date" /></td>
                     <td>${user.deleted ? "Disabilitato" : "Attivo"}</td>
-                </tr>
+                    <td><a href="#" class="btn btn-success">Modifica</a><a href="#" class="btn btn-danger">Elimina</a></td>
             </c:forEach>
         </tbody>
     </table>
