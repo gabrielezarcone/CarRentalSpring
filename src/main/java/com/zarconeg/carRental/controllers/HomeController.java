@@ -25,6 +25,8 @@ public class HomeController {
 
     @RequestMapping("admin/home")
     public ModelAndView adminHomePage(ModelMap model){
+        List<User> userList = userService.getList();
+        model.addAttribute("userList", userList);
         return new ModelAndView("homeAdmin", model);
     }
 
