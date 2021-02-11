@@ -14,6 +14,7 @@
     <link href="<c:url value='/webjars/bootstrap/5.0.0-beta1/css/bootstrap.min.css' />" rel="stylesheet"/>
     <link href="<c:url value='/static/css/main.css' />" rel="stylesheet"/>
     <script src="<c:url value='/webjars/bootstrap/5.0.0-beta1/js/bootstrap.min.js' />"></script>
+    <script src="<c:url value='/static/js/main.js' />"></script>
 </head>
 <body>
     <header>

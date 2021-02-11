@@ -37,4 +37,8 @@ public class UserService {
     public void elimina(User user){
         dao.elimina(user);
     }
+
+    public void disabilitaCustomer(String username) {
+        dao.disabilitaCustomer(username);
+    }
 }

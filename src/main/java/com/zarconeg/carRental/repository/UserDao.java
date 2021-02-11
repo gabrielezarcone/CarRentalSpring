@@ -27,5 +27,10 @@ public class UserDao extends AbstractDao<Long, User>{
         User user = getByUsername(username);
         return user.getId();
     }
+
+    public void disabilitaCustomer(String username) {
+        User user = getByUsername(username);
+        user.setDeleted(true);
+    }
 }
 

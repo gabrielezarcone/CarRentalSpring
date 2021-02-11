@@ -24,7 +24,10 @@
                     <c:choose>
                     <c:when test="${user.deleted eq false}">
                         <td>Attivo</td>
-                        <td><a href="#" class="btn btn-success">Modifica</a><a href="#" class="btn btn-danger">Elimina</a></td>
+                        <td>
+                            <a href="#" class="btn btn-success">Modifica</a>
+                            <button  class="btn btn-danger" onclick="disabilita('${user.username}');">Elimina</button>
+                        </td>
                     </c:when>
                     <c:otherwise>
                         <td>Disabilitato</td>
