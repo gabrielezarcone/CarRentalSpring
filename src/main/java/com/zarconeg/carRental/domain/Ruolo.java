@@ -15,11 +15,7 @@ public class Ruolo {
 
 
     //-------- relazioni ------------------------------------------------------------------
-<<<<<<< HEAD
-    @ManyToMany
-=======
     @ManyToMany(mappedBy = "ruoli")
->>>>>>> domain
     private Set<User> users;
 
 
