@@ -42,6 +42,11 @@ public class User {
     private Set<Prenotazione> prenotazione;
 
    @ManyToMany
+   @JoinTable(
+           name = "user_ruoli",
+           joinColumns = @JoinColumn(name = "user_id"),
+           inverseJoinColumns = @JoinColumn(name = "ruolo_id")
+   )
    private Set<Ruolo> ruoli;
 
 
