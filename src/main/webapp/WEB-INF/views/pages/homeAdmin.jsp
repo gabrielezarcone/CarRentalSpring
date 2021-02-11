@@ -16,13 +16,21 @@
         </thead>
         <tbody>
             <c:forEach var="user" items="${userList}">
-                <tr>
+                <tr class='${user.deleted ? "table-active" : ""}'>
                     <th scope="row">${user.username}</th>
                     <td>${user.name}</td>
                     <td>${user.surname}</td>
                     <td> <fmt:formatDate value="${user.birthDate}" type="date" /></td>
-                    <td>${user.deleted ? "Disabilitato" : "Attivo"}</td>
-                    <td><a href="#" class="btn btn-success">Modifica</a><a href="#" class="btn btn-danger">Elimina</a></td>
+                    <c:choose>
+                    <c:when test="${user.deleted eq false}">
+                        <td>Attivo</td>
+                        <td><a href="#" class="btn btn-success">Modifica</a><a href="#" class="btn btn-danger">Elimina</a></td>
+                    </c:when>
+                    <c:otherwise>
+                        <td>Disabilitato</td>
+                        <td></td>
+                    </c:otherwise>
+                    </c:choose>
             </c:forEach>
         </tbody>
     </table>
