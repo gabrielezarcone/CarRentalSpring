@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <div class="table-responsive"> <%-- Per rendere responsive la tabella--%>
@@ -18,7 +19,7 @@
                     <th scope="row">${user.username}</th>
                     <td>${user.name}</td>
                     <td>${user.surname}</td>
-                    <td>${user.birthDate}</td>
+                    <td> <fmt:formatDate value="${user.birthDate}" type="date" /></td>
                     <td>${user.deleted ? "Disabilitato" : "Attivo"}</td>
                 </tr>
             </c:forEach>
