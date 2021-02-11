@@ -42,3 +42,14 @@ $primary-color: #335;
   @extend .chooseBtn;
   @extend .btn-secondary;
 }
+
+.errorDiv{
+  @extend .d-grid;
+  @extend .mt-4;
+  @extend .gap-2;
+  @extend .text-center;
+}
+.backToHomeBtn{
+  @extend .btn;
+  @extend .btn-danger;
+}

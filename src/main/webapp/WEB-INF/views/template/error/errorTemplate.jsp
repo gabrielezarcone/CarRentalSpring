@@ -15,7 +15,9 @@
     <script src="<c:url value='/webjars/bootstrap/5.0.0-beta1/js/bootstrap.min.js' />"></script>
 </head>
 <body>
-<h1><tiles:getAsString name="messaggioErrore"/></h1>
-<a class="backToHomeBtn" href="<c:url value="/"/>">Torna alla home</a>
+<div class="errorDiv">
+    <h1><tiles:getAsString name="messaggioErrore"/></h1>
+    <a class="backToHomeBtn" href="<c:url value="/"/>">Torna alla home</a>
+</div>
 </body>
 </html>
