@@ -53,3 +53,12 @@ $primary-color: #335;
   @extend .btn;
   @extend .btn-danger;
 }
+
+#allUsersTable{
+  @extend .table;
+  @extend .table-bordered;
+  @extend .mt-4;
+}
+#allUsersTable thead{
+  @extend .table-dark
+}
