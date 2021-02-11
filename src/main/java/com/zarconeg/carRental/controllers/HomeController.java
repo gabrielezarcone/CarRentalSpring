@@ -21,4 +21,9 @@ public class HomeController {
     public ModelAndView renderHomePage(ModelMap model){
         return new ModelAndView("home", model);
     }
+
+    @RequestMapping("admin/home")
+    public ModelAndView adminHomePage(ModelMap model){
+        return new ModelAndView("homeAdmin", model);
+    }
 }
