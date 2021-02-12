@@ -12,7 +12,53 @@ $success: #00ff8a;
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #335;
 
-body {
-  font: 100% $font-stack;
-  color: $primary-color;
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.navbarHeader{
+  @extend .navbar;
+  @extend .navbar-expand-sm;
+  @extend .navbar-dark;
+  @extend .bg-primary;
+}
+
+#homeChooser{
+  @extend .text-center;
+  @extend .d-grid;
+  @extend .gap-2;
+  @extend .mt-4;
+}
+.chooseBtn{
+  @extend .btn;
+  @extend .btn-lg;
+}
+#homeChooser .chooseAdminBtn{
+  @extend .chooseBtn;
+  @extend .btn-primary;
+}
+#homeChooser .chooseCustomerBtn{
+  @extend .chooseBtn;
+  @extend .btn-secondary;
+}
+
+.errorDiv{
+  @extend .d-grid;
+  @extend .mt-4;
+  @extend .gap-2;
+  @extend .text-center;
+}
+.backToHomeBtn{
+  @extend .btn;
+  @extend .btn-danger;
+}
+
+#allUsersTable{
+  @extend .table;
+  @extend .table-bordered;
+  @extend .mt-4;
+}
+#allUsersTable thead{
+  @extend .table-dark
 }

@@ -9,7 +9,7 @@ import javax.servlet.ServletException;
 public class DispatcherServletInit extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{BeanConfig.class};
+        return new Class[]{BeanConfig.class, SecurityConfig.class};
     }
 
     @Override
