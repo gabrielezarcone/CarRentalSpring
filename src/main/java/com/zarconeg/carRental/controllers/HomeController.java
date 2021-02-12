@@ -1,12 +1,9 @@
 package com.zarconeg.carRental.controllers;
 
-import com.zarconeg.carRental.domain.Ruolo;
 import com.zarconeg.carRental.domain.User;
-import com.zarconeg.carRental.repository.UserDao;
 import com.zarconeg.carRental.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,10 +26,7 @@ public class HomeController {
     @RequestMapping("admin/home")
     public ModelAndView adminHomePage(ModelMap model){
         List<User> userList = userService.getList();
-        User user = userService.getByUsername("mr");
-        Set<Ruolo> ruoliList = userService.getRuoliperUser(user);
         model.addAttribute("userList", userList);
-        model.addAttribute("ruoliList", ruoliList);
         return new ModelAndView("homeAdmin", model);
     }
 
