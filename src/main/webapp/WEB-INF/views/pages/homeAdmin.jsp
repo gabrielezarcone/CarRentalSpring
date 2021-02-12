@@ -25,7 +25,7 @@
                     <c:when test="${user.deleted eq false}">
                         <td>Attivo</td>
                         <td>
-                            <a href="#" class="btn btn-success">Modifica</a>
+                            <a href='<c:url value="/admin/modifica?userid=${user.id}"/>' class="btn btn-success">Modifica</a>
                             <button  class="btn btn-danger" onclick="disabilita('${user.username}');">Elimina</button>
                         </td>
                     </c:when>

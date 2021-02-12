@@ -27,6 +27,11 @@
         <put-attribute name="title" value="Home" />
         <put-attribute name="body" value="/WEB-INF/views/pages/homeCustomer.jsp" />
     </definition>
+    <!-- Modifica user -->
+    <definition name="modificaUser" extends="base">
+        <put-attribute name="title" value="Modifica utente" />
+        <put-attribute name="body" value="/WEB-INF/views/pages/modificaUser.jsp" />
+    </definition>
 
     <!-- Pagine di errore ___________________________________________________________________ -->
     <definition name="error" template="/WEB-INF/views/template/error/errorTemplate.jsp">
