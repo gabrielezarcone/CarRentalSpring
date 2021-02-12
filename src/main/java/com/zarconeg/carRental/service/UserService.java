@@ -3,6 +3,7 @@ package com.zarconeg.carRental.service;
 import com.zarconeg.carRental.domain.Ruolo;
 import com.zarconeg.carRental.domain.User;
 import com.zarconeg.carRental.repository.UserDao;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +23,12 @@ public class UserService {
 
     public long getIdByUsername(String username){
         return dao.getIdByUsername(username);
+    }
+
+    public User getByIdEager(long id){
+        User user = dao.getById(id);
+        Hibernate.initialize(user.getRuoli());
+        return user;
     }
 
     public User getById(long id){

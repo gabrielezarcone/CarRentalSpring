@@ -12,5 +12,6 @@
     <form:input path="password" type="password"/>
     <fmt:formatDate value="${user.birthDate}" pattern="yyyy-MM-dd" var="formatBirthDate"/>
     <form:input path="birthDate" type="date" value='${formatBirthDate}'/>
+    <form:checkboxes path="ruoli" items="${roleList}"/>
     <input type="submit" value="Salva">
 </form:form>
