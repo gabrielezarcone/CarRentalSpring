@@ -3,11 +3,13 @@ package com.zarconeg.carRental.repository;
 import com.zarconeg.carRental.domain.User;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.ParameterExpression;
 import javax.persistence.criteria.Root;
 
+@Repository("userDao")
 public class UserDao extends AbstractDao<Long, User>{
     public User getByUsername(String username){
         CriteriaContainer cc = new CriteriaContainer();
