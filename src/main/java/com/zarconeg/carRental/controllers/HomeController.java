@@ -20,8 +20,6 @@ import java.util.Set;
 public class HomeController {
     @Autowired
     UserService userService;
-    @Autowired
-    UserDao dao;
 
     @RequestMapping()
     public ModelAndView renderHomePage(ModelMap model){
@@ -31,8 +29,8 @@ public class HomeController {
     @RequestMapping("admin/home")
     public ModelAndView adminHomePage(ModelMap model){
         List<User> userList = userService.getList();
-        User user = userService.getByUsername("admin");
-        Set<Ruolo> ruoliList = dao.getRuoliperUser(user);
+        User user = userService.getByUsername("mr");
+        Set<Ruolo> ruoliList = userService.getRuoliperUser(user);
         model.addAttribute("userList", userList);
         model.addAttribute("ruoliList", ruoliList);
         return new ModelAndView("homeAdmin", model);

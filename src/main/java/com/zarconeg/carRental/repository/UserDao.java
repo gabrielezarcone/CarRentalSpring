@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Set;
 
 @Repository("userDao")
-@Transactional
 public class UserDao extends AbstractDao<Long, User>{
     public User getByUsername(String username){
         CriteriaContainer cc = new CriteriaContainer();
