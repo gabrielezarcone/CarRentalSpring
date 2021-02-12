@@ -37,4 +37,7 @@
             </c:forEach>
         </tbody>
     </table>
+    <c:forEach var="ruolo" items="${ruoliList}">
+        ${ruolo.ruolo}
+    </c:forEach>
 </div>
