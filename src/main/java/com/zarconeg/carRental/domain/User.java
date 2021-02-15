@@ -1,27 +1,30 @@
 package com.zarconeg.carRental.domain;
 
-import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements Serializable {
     //-------- campi ------------------------------------------------------------------
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @UniqueElements
     @NotNull
+    @Size(min=2)
     @Column(name="username", nullable = false, unique = true)
     private String username;
 
     @NotNull
+    @Size(min=8)
     @Column(name="password", nullable = false)
     private String password;
 
@@ -32,6 +35,7 @@ public class User {
     private String surname;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Past
     @Column(name="birthDate")
     private Date birthDate;
 
