@@ -54,4 +54,8 @@ public class UserService {
     public Set<Ruolo> getRuoliperUser(User user) {
         return dao.getRuoliperUser(user);
     }
+
+    public void aggiungiAggiorna(User user) {
+        dao.aggiungiAggiorna(user);
+    }
 }
