@@ -4,7 +4,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 
-<html>
+<html class="h-100">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -16,7 +16,7 @@
     <script src="<c:url value='/webjars/bootstrap/5.0.0-beta1/js/bootstrap.min.js' />"></script>
     <script src="<c:url value='/static/js/main.js' />"></script>
 </head>
-<body>
+<body class="d-flex flex-column h-100">
     <header>
         <tiles:insertAttribute name="header"/>
     </header>
@@ -30,8 +30,8 @@
             </section>
         </div>
     </div>
-    <section id="footer">
+    <footer id="footer" class="footerTemplate">
         <tiles:insertAttribute name="footer"/>
-    </section>
+    </footer>
 </body>
 </html>

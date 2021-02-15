@@ -5219,7 +5219,7 @@ textarea.form-control-lg {
 .mt-5 {
   margin-top: 3rem !important; }
 
-.mt-auto {
+.mt-auto, .footerTemplate {
   margin-top: auto !important; }
 
 .me-0 {
@@ -5335,7 +5335,7 @@ textarea.form-control-lg {
   padding-top: 0.25rem !important;
   padding-bottom: 0.25rem !important; }
 
-.py-2 {
+.py-2, .footerTemplate {
   padding-top: 0.5rem !important;
   padding-bottom: 0.5rem !important; }
 
@@ -5552,7 +5552,7 @@ textarea.form-control-lg {
 .bg-danger {
   background-color: #dc3545 !important; }
 
-.bg-light {
+.bg-light, .footerTemplate {
   background-color: #f8f9fa !important; }
 
 .bg-dark {

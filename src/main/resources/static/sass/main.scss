@@ -67,3 +67,9 @@ $primary-color: #335;
   @extend .row;
   @extend .mb-2
 }
+
+.footerTemplate{
+  @extend .mt-auto;
+  @extend .bg-light;
+  @extend .py-2;
+}
