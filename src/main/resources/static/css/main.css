@@ -496,7 +496,7 @@ progress {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1320px; } }
 
-.row {
+.row, .formRow {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: flex;
@@ -504,7 +504,7 @@ progress {
   margin-top: calc(var(--bs-gutter-y) * -1);
   margin-right: calc(var(--bs-gutter-x) / -2);
   margin-left: calc(var(--bs-gutter-x) / -2); }
-  .row > * {
+  .row > *, .formRow > * {
     flex-shrink: 0;
     width: 100%;
     max-width: 100%;
@@ -5249,7 +5249,7 @@ textarea.form-control-lg {
 .mb-1 {
   margin-bottom: 0.25rem !important; }
 
-.mb-2 {
+.mb-2, .formRow {
   margin-bottom: 0.5rem !important; }
 
 .mb-3 {

@@ -62,3 +62,8 @@ $primary-color: #335;
 #allUsersTable thead{
   @extend .table-dark
 }
+
+.formRow{
+  @extend .row;
+  @extend .mb-2
+}

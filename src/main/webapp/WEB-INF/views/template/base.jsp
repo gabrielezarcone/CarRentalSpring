@@ -25,7 +25,7 @@
             <section id="sideMenu" class="col-1">
                 <tiles:insertAttribute name="menu"/>
             </section>
-            <section id="content" class="col-11">
+            <section id="content" class="mt-4 col-11">
                 <tiles:insertAttribute name="body"/>
             </section>
         </div>
