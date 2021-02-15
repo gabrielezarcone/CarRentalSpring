@@ -7,6 +7,8 @@ import com.zarconeg.carRental.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -30,5 +32,11 @@ public class ModificaUserController {
         model.addAttribute("user", user);
         model.addAttribute("roleList", roleNameList);
         return new ModelAndView("modificaUser", model);
+    }
+
+    @PostMapping("admin/modifica")
+    public ModelAndView actionAdminModificaUser(User user, BindingResult result, ModelMap model){
+        userService.aggiungiAggiorna(user);
+        return new ModelAndView("home", model);
     }
 }

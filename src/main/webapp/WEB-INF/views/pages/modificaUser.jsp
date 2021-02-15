@@ -2,10 +2,13 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <h1>Modifica user <strong>${user.username}</strong></h1>
 
-<form:form method="post" modelAttribute="user">
+<c:url var="actionUrl"  value="/admin/modifica" />
+<form:form method="post" modelAttribute="user" action="${actionUrl}">
+    <form:input path="id" type="hidden"/>
     <form:input path="username"/>
     <form:input path="name"/>
     <form:input path="surname"/>
