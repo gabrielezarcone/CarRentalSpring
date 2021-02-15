@@ -11,18 +11,33 @@
                 <th scope="col">Cognome</th>
                 <th scope="col">Data di nascita</th>
                 <th scope="col">Stato</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             <c:forEach var="user" items="${userList}">
-                <tr>
+                <tr class='${user.deleted ? "table-active" : ""}'>
                     <th scope="row">${user.username}</th>
                     <td>${user.name}</td>
                     <td>${user.surname}</td>
                     <td> <fmt:formatDate value="${user.birthDate}" type="date" /></td>
-                    <td>${user.deleted ? "Disabilitato" : "Attivo"}</td>
-                </tr>
+                    <c:choose>
+                    <c:when test="${user.deleted eq false}">
+                        <td>Attivo</td>
+                        <td>
+                            <a href='<c:url value="/admin/modifica?userid=${user.id}"/>' class="btn btn-success">Modifica</a>
+                            <button  class="btn btn-danger" onclick="disabilita('${user.username}');">Elimina</button>
+                        </td>
+                    </c:when>
+                    <c:otherwise>
+                        <td>Disabilitato</td>
+                        <td></td>
+                    </c:otherwise>
+                    </c:choose>
             </c:forEach>
         </tbody>
     </table>
+    <c:forEach var="ruolo" items="${ruoliList}">
+        ${ruolo.ruolo}
+    </c:forEach>
 </div>

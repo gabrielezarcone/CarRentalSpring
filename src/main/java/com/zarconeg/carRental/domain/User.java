@@ -1,6 +1,7 @@
 package com.zarconeg.carRental.domain;
 
 import org.hibernate.validator.constraints.UniqueElements;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -30,6 +31,7 @@ public class User {
     @Column(name="surname")
     private String surname;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name="birthDate")
     private Date birthDate;
 
