@@ -33,7 +33,7 @@ public class ModificaUserController {
         return "modificaUser";
     }
 
-    @PostMapping("admin/modifica")
+    @PostMapping(value = {"admin/modifica", "admin/aggiungi"})
     public String actionAdminModificaUser(@Valid User user, BindingResult result, ModelMap model){
         if(result.hasErrors()) {
             roleListModel(model);
@@ -41,6 +41,14 @@ public class ModificaUserController {
         }
         userService.aggiungiAggiorna(user);
         return "home";
+    }
+
+    @RequestMapping("admin/aggiungi")
+    public String adminAggiungiUser(ModelMap model){
+        User user = new User();
+        roleListModel(model);
+        model.addAttribute("user", user);
+        return "modificaUser";
     }
 
 

@@ -73,3 +73,12 @@ $primary-color: #335;
   @extend .bg-light;
   @extend .py-2;
 }
+
+.addUserBtn{
+  @extend .btn;
+  @extend .btn-secondary;
+  @extend .w-100;
+}
+.addUserBtn i{
+  @extend .fs-4;
+}
