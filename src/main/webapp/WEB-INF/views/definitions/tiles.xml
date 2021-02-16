@@ -3,7 +3,7 @@
 
 <tiles-definitions>
 
-    <!-- Base Definition -->
+    <!-- Base Definition  ___________________________________________________________________ -->
     <definition name="base" template="/WEB-INF/views/template/base.jsp">
         <put-attribute name="title" value="A" />
         <put-attribute name="header" value="/WEB-INF/views/template/defaultHeader.jsp" />
@@ -17,6 +17,32 @@
         <put-attribute name="title" value="Welcome" />
         <put-attribute name="body" value="/WEB-INF/views/pages/home.jsp" />
     </definition>
+    <!-- Home Page Admin -->
+    <definition name="homeAdmin" extends="base">
+        <put-attribute name="title" value="Home Admin" />
+        <put-attribute name="body" value="/WEB-INF/views/pages/homeAdmin.jsp" />
+    </definition>
+    <!-- Home Page Admin -->
+    <definition name="homeCustomer" extends="base">
+        <put-attribute name="title" value="Home" />
+        <put-attribute name="body" value="/WEB-INF/views/pages/homeCustomer.jsp" />
+    </definition>
+    <!-- Modifica user -->
+    <definition name="modificaUser" extends="base">
+        <put-attribute name="title" value="Modifica utente" />
+        <put-attribute name="body" value="/WEB-INF/views/pages/modificaUser.jsp" />
+    </definition>
 
+    <!-- Pagine di errore ___________________________________________________________________ -->
+    <definition name="error" template="/WEB-INF/views/template/error/errorTemplate.jsp">
+        <put-attribute name="title" value="Errore"/>
+        <put-attribute name="messaggioErrore" value="Si è verificato un errore"/>
+    </definition>
+
+    <!-- Access Denied -->
+    <definition name="accessDenied" extends="error">
+        <put-attribute name="title" value="Accesso negato"/>
+        <put-attribute name="messaggioErrore" value="Non hai il permesso di accedere a questa sezione"/>
+    </definition>
 
 </tiles-definitions>
