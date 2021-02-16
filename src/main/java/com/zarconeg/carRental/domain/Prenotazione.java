@@ -29,9 +29,8 @@ public class Prenotazione {
     private Date fine;
 
     @Enumerated(EnumType.STRING)
-    @ColumnDefault( value = "PENDING" )
     @Column(name = "stato")
-    private Stato stato;
+    private Stato stato = Stato.PENDING;
 
     @ManyToOne
     @JoinColumn(name = "auto")

@@ -1,6 +1,5 @@
 package com.zarconeg.carRental.domain;
 
-import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -16,7 +15,6 @@ public class Auto {
     private long id;
 
     @NotNull
-    @UniqueElements
     @Column(name = "targa", nullable = false, unique = true)
     private String targa;
 

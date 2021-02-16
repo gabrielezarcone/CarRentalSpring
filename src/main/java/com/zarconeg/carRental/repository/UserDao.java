@@ -33,6 +33,11 @@ public class UserDao extends AbstractDao<Long, User>{
         return user.getId();
     }
 
+    public void disabilitaCustomer(String username) {
+        User user = getByUsername(username);
+        user.setDeleted(true);
+    }
+
     public Set<Ruolo> getRuoliperUser(User user) {
         getSession().update(user);
         Hibernate.initialize(user.getRuoli());

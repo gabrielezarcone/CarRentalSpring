@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service("ruoloService")
 @Transactional
@@ -30,4 +31,13 @@ public class RuoloService {
     public void elimina(Ruolo ruolo){
         dao.elimina(ruolo);
     }
+
+    public List<String> getNameList(){
+        List<Ruolo> roleList = getList();
+        return roleList.stream().map(
+                ruolo -> {
+                    return ruolo.getRuolo().substring(5); // per togliere ROLE_ davanti al nome del ruolo
+                }).collect(Collectors.toList());
+    }
+
 }
