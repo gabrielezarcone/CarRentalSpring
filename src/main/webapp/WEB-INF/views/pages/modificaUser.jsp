@@ -38,7 +38,7 @@
     <div class="formRow">
         <label for="password" class="col-sm-2 col-form-label">Password</label>
         <div class="col">
-            <form:input path="password" type="password" cssClass="form-control"/>
+            <form:input path="password" type="password" cssClass="form-control" onkeypress="modificaPassword();"/> <%-- Se il campo viene modificato avviso il controller che dovrà criptare la password--%>
             <div class="has-error">
                 <form:errors path="password" cssClass="badge bg-danger"/>
             </div>
