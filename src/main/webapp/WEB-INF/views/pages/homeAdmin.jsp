@@ -2,7 +2,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<a href="<c:url value="/admin/aggiungi"></c:url>" class="addUserBtn"><i class="bi-plus-circle-fill"></i></a>
+<a href="<c:url value="/admin/aggiungi"></c:url>" class="addUserBtn"><i class="bi-person-plus-fill"></i></a>
 <div class="table-responsive"> <%-- Per rendere responsive la tabella--%>
     <table id="allUsersTable">
         <thead>
@@ -26,8 +26,11 @@
                     <c:when test="${user.deleted eq false}">
                         <td>Attivo</td>
                         <td>
-                            <a href='<c:url value="/admin/modifica?userid=${user.id}"/>' class="btn btn-success">Modifica</a>
-                            <button  class="btn btn-danger" onclick="disabilita('${user.username}');">Elimina</button>
+                            <div class="btn-group w-100" role="group">
+                                <a href='<c:url value="/admin/modifica?userid=${user.id}"/>' class="btn btn-success">Modifica</a>
+                                <button  class="btn btn-danger" onclick="disabilita('${user.username}');">Elimina</button>
+                                <a href='<c:url value="/admin/prenotazioni/${user.id}"/>' class="btn btn-primary">Prenotazioni</a>
+                            </div>
                         </td>
                     </c:when>
                     <c:otherwise>
