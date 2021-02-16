@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Set;
 
 @Controller
 @RequestMapping(value = "/")
@@ -19,10 +20,18 @@ public class HomeController {
 
     @RequestMapping()
     public ModelAndView renderHomePage(ModelMap model){
-        List<User> userList = userService.getList();
-        User admin = userService.getByUsername("admin");
-        model.addAttribute("adminUser", admin.getUsername());
-        model.addAttribute("usersList", userList);
         return new ModelAndView("home", model);
+    }
+
+    @RequestMapping("admin/home")
+    public ModelAndView adminHomePage(ModelMap model){
+        List<User> userList = userService.getList();
+        model.addAttribute("userList", userList);
+        return new ModelAndView("homeAdmin", model);
+    }
+
+    @RequestMapping("customer/home")
+    public ModelAndView customerHomePage(ModelMap model){
+        return new ModelAndView("homeCustomer", model);
     }
 }
