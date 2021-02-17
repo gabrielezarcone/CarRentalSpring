@@ -14,6 +14,22 @@ function disabilita(username){
     }
     xhrCall(method,url,null,onloadfunction);
 }
+
+function cambiaStatoPrenotazione(url){
+    let method = 'GET';
+    let onloadfunction = function () {
+        location.reload();
+    }
+    xhrCall(method,url,null,onloadfunction);
+}
+function approvaPrenotazione(idPrenotazione){
+    let url = './ajax/approva/'+idPrenotazione;
+    cambiaStatoPrenotazione(url);
+}
+function rifiutaPrenotazione(idPrenotazione){
+    let url = './ajax/rifiuta/'+idPrenotazione;
+    cambiaStatoPrenotazione(url);
+}
 // --------------------------------------------------------------------------------------------------------------------------------------------
 
 
