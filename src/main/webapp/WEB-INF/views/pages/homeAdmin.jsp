@@ -15,12 +15,13 @@
                 <th scope="col">
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search">
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                        <select class="form-select me-2 w-50 bg-dark text-white" aria-label="Default select example">
+                            <option selected value="username">Username</option>
+                            <option value="nome">Nome</option>
+                            <option value="cognome">Cognome</option>
+                            <option value="birthDate">Data di nascita</option>
+                            <option value="stato">Stato</option>
+                        </select>
                         <button class="btn btn-outline-primary" type="submit">Search</button>
                     </form>
                 </th>
