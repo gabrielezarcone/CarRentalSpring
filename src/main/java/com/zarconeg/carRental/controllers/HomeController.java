@@ -1,5 +1,6 @@
 package com.zarconeg.carRental.controllers;
 
+import com.zarconeg.carRental.domain.Prenotazione;
 import com.zarconeg.carRental.domain.User;
 import com.zarconeg.carRental.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Set;
 
@@ -42,7 +44,11 @@ public class HomeController {
 
     // CUSTOMER --------------------------------------------------------------------------------------------------------------------------------------------
     @RequestMapping("customer/home")
-    public ModelAndView customerHomePage(ModelMap model){
-        return new ModelAndView("homeCustomer", model);
+    public String customerHomePage(Principal principal, ModelMap model){
+        String username = principal.getName();
+        User user = userService.getByUsername(username);
+        List<Prenotazione> prenotazioneList = userService.getPrenotazioni(user);
+        model.addAttribute("listaPrenotazioniUtente", prenotazioneList);
+        return "homeCustomer";
     }
 }
