@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <nav class="navbarHeader">
     <div class="container-fluid">
@@ -14,6 +15,12 @@
                 <a class="nav-link" href="#">Parco Auto</a>
                 <a class="nav-link" href="#">Profilo</a>
             </div>
+        </div>
+        <div class="d-flex">
+            <sec:authorize access="isAuthenticated()">
+                <c:url value="/logout" var="logout"/>
+                <a href="${logout}" class="btn btn-danger">Logout</a>
+            </sec:authorize>
         </div>
     </div>
 </nav>
