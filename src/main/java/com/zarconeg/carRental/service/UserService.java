@@ -1,5 +1,6 @@
 package com.zarconeg.carRental.service;
 
+import com.zarconeg.carRental.domain.Prenotazione;
 import com.zarconeg.carRental.domain.Ruolo;
 import com.zarconeg.carRental.domain.User;
 import com.zarconeg.carRental.repository.UserDao;
@@ -9,6 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -68,6 +70,16 @@ public class UserService {
     // NB da usare solo quando l'utente non ha modificato la password e quindi non c'è bisogno di criptare
     public void aggiungiAggiornaSenzaPassword(User user) {
         dao.aggiungiAggiorna(user);
+    }
+
+
+    //Restituisce la lista delle prenotazioni dell'utente
+    public List<Prenotazione> getPrenotazioni(User user) {
+        return dao.getPrenotazioni(user);
+    }
+
+    public List<User> cerca(String testoRicerca, String colonnaFiltro){
+        return dao.cerca(testoRicerca,colonnaFiltro);
     }
 
 }

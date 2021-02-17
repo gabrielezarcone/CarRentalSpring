@@ -29,4 +29,12 @@ public class PrenotazioneService{
     public void elimina(Prenotazione prenotazione){
         dao.elimina(prenotazione);
     }
+
+    public void updateStato(Prenotazione prenotazione, Prenotazione.Stato stato){
+        dao.updateStato(prenotazione,stato);
+    }
+
+    public void updateStatoAsString(Prenotazione prenotazione, String statoString){
+        dao.updateStatoAsString(prenotazione, statoString);
+    }
 }
