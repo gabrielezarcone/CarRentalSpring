@@ -58,9 +58,11 @@ $primary-color: #335;
   @extend .table;
   @extend .table-bordered;
   @extend .mt-4;
+  @extend .align-middle;
 }
 #allUsersTable thead{
-  @extend .table-dark
+  @extend .table-dark;
+  @extend .align-middle;
 }
 
 .formRow{
