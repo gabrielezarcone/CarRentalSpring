@@ -32,12 +32,12 @@
                 </c:choose>
                 <td>
                     <div class="tableBtnGroup" role="group">
-                        <a href="" type="button" class="btn btn-success">Modifica</a>
+                        <c:url var="modificaUrl" value="/customer/modificaPrenotazione/${prenotazione.id}"/>
+                        <a href="${modificaUrl}" type="button" class="btn btn-success">Modifica</a>
                         <a href="" type="button" class="btn btn-danger">Elimina</a>
                     </div>
                 </td>
             </tr>
-
         </c:forEach>
         </tbody>
     </table>
