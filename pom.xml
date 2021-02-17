@@ -85,9 +85,9 @@
       <version>2.0.1.Final</version>
     </dependency>
     <dependency>
-      <groupId>org.hibernate.validator</groupId>
+      <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
-      <version>7.0.1.Final</version>
+      <version>5.4.1.Final</version> <!-- Modificata la verione altrimeni non compatibile con le altre dipendenze e non fuinzionava la validazione-->
     </dependency>
     <!-- MY SQL -->
     <dependency>

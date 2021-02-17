@@ -1,5 +1,6 @@
 package com.zarconeg.carRental.repository;
 
+import com.zarconeg.carRental.domain.Prenotazione;
 import com.zarconeg.carRental.domain.Ruolo;
 import com.zarconeg.carRental.domain.User;
 import org.hibernate.Hibernate;
@@ -11,11 +12,11 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.ParameterExpression;
 import javax.persistence.criteria.Root;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 @Repository("userDao")
-@Transactional
 public class UserDao extends AbstractDao<Long, User>{
     public User getByUsername(String username){
         CriteriaContainer cc = new CriteriaContainer();
@@ -34,10 +35,23 @@ public class UserDao extends AbstractDao<Long, User>{
         return user.getId();
     }
 
+    public void disabilitaCustomer(String username) {
+        User user = getByUsername(username);
+        user.setDeleted(true);
+    }
+
     public Set<Ruolo> getRuoliperUser(User user) {
         getSession().update(user);
         Hibernate.initialize(user.getRuoli());
         return user.getRuoli();
+    }
+
+    //Restituisce la lista delle prenotazioni dell'utente
+    public List<Prenotazione> getPrenotazioni(User user) {
+        getSession().update(user);
+        Hibernate.initialize(user.getPrenotazione());
+        Set<Prenotazione> setPrenotazioni = user.getPrenotazione();
+        return new ArrayList<>(setPrenotazioni);
     }
 }
 

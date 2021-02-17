@@ -1,5 +1,5 @@
 //----- SCSS che modifica le classi Bootstrap------------------------------------------------------------------------------------------------------
-$success: #00ff8a;
+$light: rgba(205, 205, 205, 0.32);
 
 
 
@@ -61,4 +61,24 @@ $primary-color: #335;
 }
 #allUsersTable thead{
   @extend .table-dark
+}
+
+.formRow{
+  @extend .row;
+  @extend .mb-2
+}
+
+.footerTemplate{
+  @extend .mt-auto;
+  @extend .bg-light;
+  @extend .py-2;
+}
+
+.addUserBtn{
+  @extend .btn;
+  @extend .btn-light;
+  @extend .w-100;
+}
+.addUserBtn i{
+  @extend .fs-4;
 }
