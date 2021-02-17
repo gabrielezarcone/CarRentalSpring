@@ -20,7 +20,10 @@
                 <td>${prenotazione.auto.costruttore} ${prenotazione.auto.modello}</td>
                 <c:choose>
                     <c:when test='${prenotazione.stato eq "PENDING"}'>
-                        <td class="table-light">${prenotazione.stato}</td>
+                        <td><div class="btn-group w-100" role="group">
+                            <button type="button" class="btn btn-primary">Accetta</button>
+                            <button type="button" class="btn btn-dark">Rifiuta</button>
+                        </td>
                     </c:when>
                     <c:when test='${prenotazione.stato eq "APPROVATO"}'>
                         <td class="table-success">${prenotazione.stato}</td>
