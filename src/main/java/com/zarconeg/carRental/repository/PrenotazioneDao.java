@@ -8,6 +8,7 @@ public class PrenotazioneDao extends AbstractDao<Long, Prenotazione>{
 
     public void updateStato(Prenotazione prenotazione, Prenotazione.Stato stato){
         prenotazione.setStato(stato);
+        getSession().update(prenotazione);
     }
 
     public void updateStatoAsString(Prenotazione prenotazione, String statoString){

@@ -12,7 +12,19 @@
                 <th scope="col">Cognome</th>
                 <th scope="col">Data di nascita</th>
                 <th scope="col">Stato</th>
-                <th scope="col"></th>
+                <th scope="col">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search">
+                        <select class="form-select me-2 w-50 bg-dark text-white" aria-label="Default select example">
+                            <option selected value="username">Username</option>
+                            <option value="nome">Nome</option>
+                            <option value="cognome">Cognome</option>
+                            <option value="birthDate">Data di nascita</option>
+                            <option value="stato">Stato</option>
+                        </select>
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                </th>
             </tr>
         </thead>
         <tbody>
