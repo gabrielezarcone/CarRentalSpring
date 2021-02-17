@@ -12,7 +12,18 @@
                 <th scope="col">Cognome</th>
                 <th scope="col">Data di nascita</th>
                 <th scope="col">Stato</th>
-                <th scope="col"></th>
+                <th scope="col">
+                    <c:url value="/admin/home" var="url"/>
+                    <form class="d-flex"  onsubmit="return cercaUtente('${url}');">
+                        <input id="testoRicercaUtente" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search">
+                        <select id="filtroRicercaUtente" class="form-select me-2 w-50 bg-dark text-white" aria-label="Default select example">
+                            <option selected value="username">Username</option>
+                            <option value="name">Nome</option>
+                            <option value="surname">Cognome</option>
+                        </select>
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                </th>
             </tr>
         </thead>
         <tbody>

@@ -78,4 +78,8 @@ public class UserService {
         return dao.getPrenotazioni(user);
     }
 
+    public List<User> cerca(String testoRicerca, String colonnaFiltro){
+        return dao.cerca(testoRicerca,colonnaFiltro);
+    }
+
 }
