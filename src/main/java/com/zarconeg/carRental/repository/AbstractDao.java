@@ -1,13 +1,12 @@
 package com.zarconeg.carRental.repository;
 
-import com.zarconeg.carRental.domain.User;
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.ParameterExpression;
 import javax.persistence.criteria.Root;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
@@ -70,5 +69,21 @@ public abstract class AbstractDao<PK extends Serializable, EntityClass> {
     public CriteriaQuery<EntityClass> selectCriteria(){
         CriteriaContainer cc = new CriteriaContainer();
         return cc.query.select(cc.root);
+    }
+
+    // Uso criteria per rendere dinamica la colonna su cui fare il Like e poter cercare dentro ad una tabella con diversi filtri
+    public List<EntityClass> cerca(String testoRicerca, String colonnaFiltro){
+        CriteriaContainer cc = new CriteriaContainer();
+        // SELECT * FROM EntityClass
+        cc.query.select(cc.root);
+        // SELECT * FROM EntityClass WHERE colonnaFiltro LIKE :testoParam
+        ParameterExpression<String> testoParam = cc.builder.parameter(String.class);
+        cc.query.where(
+                cc.builder.like(cc.root.get(colonnaFiltro), testoParam)
+        );
+        // Ottengo la lista risultante dalla query
+        return getSession().createQuery(cc.query)
+                .setParameter(testoParam, "%"+testoRicerca+"%")  // :testoParam -> "%testoRicerca%"
+                .getResultList();
     }
 }
