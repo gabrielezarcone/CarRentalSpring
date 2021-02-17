@@ -2706,12 +2706,12 @@ textarea.form-control-lg {
   .dropdown-menu-dark .dropdown-header {
     color: #adb5bd; }
 
-.btn-group,
+.btn-group, .tableBtnGroup,
 .btn-group-vertical {
   position: relative;
   display: inline-flex;
   vertical-align: middle; }
-  .btn-group > .btn, .btn-group > .addUserBtn, .btn-group > .backToHomeBtn, .btn-group > .chooseBtn, #homeChooser .btn-group > .chooseCustomerBtn, #homeChooser .btn-group > .chooseAdminBtn,
+  .btn-group > .btn, .tableBtnGroup > .btn, .btn-group > .addUserBtn, .tableBtnGroup > .addUserBtn, .btn-group > .backToHomeBtn, .tableBtnGroup > .backToHomeBtn, .btn-group > .chooseBtn, .tableBtnGroup > .chooseBtn, #homeChooser .btn-group > .chooseCustomerBtn, #homeChooser .tableBtnGroup > .chooseCustomerBtn, #homeChooser .btn-group > .chooseAdminBtn, #homeChooser .tableBtnGroup > .chooseAdminBtn,
   .btn-group-vertical > .btn,
   .btn-group-vertical > .addUserBtn,
   .btn-group-vertical > .backToHomeBtn,
@@ -2720,37 +2720,67 @@ textarea.form-control-lg {
   #homeChooser .btn-group-vertical > .chooseAdminBtn {
     position: relative;
     flex: 1 1 auto; }
-  .btn-group > .btn-check:checked + .btn, .btn-group > .btn-check:checked + .addUserBtn, .btn-group > .btn-check:checked + .backToHomeBtn, .btn-group > .btn-check:checked + .chooseBtn, #homeChooser .btn-group > .btn-check:checked + .chooseCustomerBtn, #homeChooser .btn-group > .btn-check:checked + .chooseAdminBtn,
+  .btn-group > .btn-check:checked + .btn, .tableBtnGroup > .btn-check:checked + .btn, .btn-group > .btn-check:checked + .addUserBtn, .tableBtnGroup > .btn-check:checked + .addUserBtn, .btn-group > .btn-check:checked + .backToHomeBtn, .tableBtnGroup > .btn-check:checked + .backToHomeBtn, .btn-group > .btn-check:checked + .chooseBtn, .tableBtnGroup > .btn-check:checked + .chooseBtn, #homeChooser .btn-group > .btn-check:checked + .chooseCustomerBtn, #homeChooser .tableBtnGroup > .btn-check:checked + .chooseCustomerBtn, #homeChooser .btn-group > .btn-check:checked + .chooseAdminBtn, #homeChooser .tableBtnGroup > .btn-check:checked + .chooseAdminBtn,
   .btn-group > .btn-check:focus + .btn,
+  .tableBtnGroup > .btn-check:focus + .btn,
   .btn-group > .btn-check:focus + .addUserBtn,
+  .tableBtnGroup > .btn-check:focus + .addUserBtn,
   .btn-group > .btn-check:focus + .backToHomeBtn,
+  .tableBtnGroup > .btn-check:focus + .backToHomeBtn,
   .btn-group > .btn-check:focus + .chooseBtn,
+  .tableBtnGroup > .btn-check:focus + .chooseBtn,
   #homeChooser .btn-group > .btn-check:focus + .chooseCustomerBtn,
+  #homeChooser .tableBtnGroup > .btn-check:focus + .chooseCustomerBtn,
   #homeChooser .btn-group > .btn-check:focus + .chooseAdminBtn,
+  #homeChooser .tableBtnGroup > .btn-check:focus + .chooseAdminBtn,
   .btn-group > .btn:hover,
+  .tableBtnGroup > .btn:hover,
   .btn-group > .addUserBtn:hover,
+  .tableBtnGroup > .addUserBtn:hover,
   .btn-group > .backToHomeBtn:hover,
+  .tableBtnGroup > .backToHomeBtn:hover,
   .btn-group > .chooseBtn:hover,
+  .tableBtnGroup > .chooseBtn:hover,
   #homeChooser .btn-group > .chooseCustomerBtn:hover,
+  #homeChooser .tableBtnGroup > .chooseCustomerBtn:hover,
   #homeChooser .btn-group > .chooseAdminBtn:hover,
+  #homeChooser .tableBtnGroup > .chooseAdminBtn:hover,
   .btn-group > .btn:focus,
+  .tableBtnGroup > .btn:focus,
   .btn-group > .addUserBtn:focus,
+  .tableBtnGroup > .addUserBtn:focus,
   .btn-group > .backToHomeBtn:focus,
+  .tableBtnGroup > .backToHomeBtn:focus,
   .btn-group > .chooseBtn:focus,
+  .tableBtnGroup > .chooseBtn:focus,
   #homeChooser .btn-group > .chooseCustomerBtn:focus,
+  #homeChooser .tableBtnGroup > .chooseCustomerBtn:focus,
   #homeChooser .btn-group > .chooseAdminBtn:focus,
+  #homeChooser .tableBtnGroup > .chooseAdminBtn:focus,
   .btn-group > .btn:active,
+  .tableBtnGroup > .btn:active,
   .btn-group > .addUserBtn:active,
+  .tableBtnGroup > .addUserBtn:active,
   .btn-group > .backToHomeBtn:active,
+  .tableBtnGroup > .backToHomeBtn:active,
   .btn-group > .chooseBtn:active,
+  .tableBtnGroup > .chooseBtn:active,
   #homeChooser .btn-group > .chooseCustomerBtn:active,
+  #homeChooser .tableBtnGroup > .chooseCustomerBtn:active,
   #homeChooser .btn-group > .chooseAdminBtn:active,
+  #homeChooser .tableBtnGroup > .chooseAdminBtn:active,
   .btn-group > .btn.active,
+  .tableBtnGroup > .btn.active,
   .btn-group > .active.addUserBtn,
+  .tableBtnGroup > .active.addUserBtn,
   .btn-group > .active.backToHomeBtn,
+  .tableBtnGroup > .active.backToHomeBtn,
   .btn-group > .active.chooseBtn,
+  .tableBtnGroup > .active.chooseBtn,
   #homeChooser .btn-group > .active.chooseCustomerBtn,
+  #homeChooser .tableBtnGroup > .active.chooseCustomerBtn,
   #homeChooser .btn-group > .active.chooseAdminBtn,
+  #homeChooser .tableBtnGroup > .active.chooseAdminBtn,
   .btn-group-vertical > .btn-check:checked + .btn,
   .btn-group-vertical > .btn-check:checked + .addUserBtn,
   .btn-group-vertical > .btn-check:checked + .backToHomeBtn,
@@ -2796,33 +2826,78 @@ textarea.form-control-lg {
   .btn-toolbar .input-group {
     width: auto; }
 
-.btn-group > .btn:not(:first-child), .btn-group > .addUserBtn:not(:first-child), .btn-group > .backToHomeBtn:not(:first-child), .btn-group > .chooseBtn:not(:first-child), #homeChooser .btn-group > .chooseCustomerBtn:not(:first-child), #homeChooser .btn-group > .chooseAdminBtn:not(:first-child),
-.btn-group > .btn-group:not(:first-child) {
+.btn-group > .btn:not(:first-child), .tableBtnGroup > .btn:not(:first-child), .btn-group > .addUserBtn:not(:first-child), .tableBtnGroup > .addUserBtn:not(:first-child), .btn-group > .backToHomeBtn:not(:first-child), .tableBtnGroup > .backToHomeBtn:not(:first-child), .btn-group > .chooseBtn:not(:first-child), .tableBtnGroup > .chooseBtn:not(:first-child), #homeChooser .btn-group > .chooseCustomerBtn:not(:first-child), #homeChooser .tableBtnGroup > .chooseCustomerBtn:not(:first-child), #homeChooser .btn-group > .chooseAdminBtn:not(:first-child), #homeChooser .tableBtnGroup > .chooseAdminBtn:not(:first-child),
+.btn-group > .btn-group:not(:first-child),
+.tableBtnGroup > .btn-group:not(:first-child),
+.btn-group > .tableBtnGroup:not(:first-child),
+.tableBtnGroup > .tableBtnGroup:not(:first-child) {
   margin-left: -1px; }
 
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .addUserBtn:not(:last-child):not(.dropdown-toggle), .btn-group > .backToHomeBtn:not(:last-child):not(.dropdown-toggle), .btn-group > .chooseBtn:not(:last-child):not(.dropdown-toggle), #homeChooser .btn-group > .chooseCustomerBtn:not(:last-child):not(.dropdown-toggle), #homeChooser .btn-group > .chooseAdminBtn:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .tableBtnGroup > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .addUserBtn:not(:last-child):not(.dropdown-toggle), .tableBtnGroup > .addUserBtn:not(:last-child):not(.dropdown-toggle), .btn-group > .backToHomeBtn:not(:last-child):not(.dropdown-toggle), .tableBtnGroup > .backToHomeBtn:not(:last-child):not(.dropdown-toggle), .btn-group > .chooseBtn:not(:last-child):not(.dropdown-toggle), .tableBtnGroup > .chooseBtn:not(:last-child):not(.dropdown-toggle), #homeChooser .btn-group > .chooseCustomerBtn:not(:last-child):not(.dropdown-toggle), #homeChooser .tableBtnGroup > .chooseCustomerBtn:not(:last-child):not(.dropdown-toggle), #homeChooser .btn-group > .chooseAdminBtn:not(:last-child):not(.dropdown-toggle), #homeChooser .tableBtnGroup > .chooseAdminBtn:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn,
+.tableBtnGroup > .btn-group:not(:last-child) > .btn,
+.btn-group > .tableBtnGroup:not(:last-child) > .btn,
+.tableBtnGroup > .tableBtnGroup:not(:last-child) > .btn,
 .btn-group > .btn-group:not(:last-child) > .addUserBtn,
+.tableBtnGroup > .btn-group:not(:last-child) > .addUserBtn,
+.btn-group > .tableBtnGroup:not(:last-child) > .addUserBtn,
+.tableBtnGroup > .tableBtnGroup:not(:last-child) > .addUserBtn,
 .btn-group > .btn-group:not(:last-child) > .backToHomeBtn,
+.tableBtnGroup > .btn-group:not(:last-child) > .backToHomeBtn,
+.btn-group > .tableBtnGroup:not(:last-child) > .backToHomeBtn,
+.tableBtnGroup > .tableBtnGroup:not(:last-child) > .backToHomeBtn,
 .btn-group > .btn-group:not(:last-child) > .chooseBtn,
+.tableBtnGroup > .btn-group:not(:last-child) > .chooseBtn,
+.btn-group > .tableBtnGroup:not(:last-child) > .chooseBtn,
+.tableBtnGroup > .tableBtnGroup:not(:last-child) > .chooseBtn,
 #homeChooser .btn-group > .btn-group:not(:last-child) > .chooseCustomerBtn,
-#homeChooser .btn-group > .btn-group:not(:last-child) > .chooseAdminBtn {
+#homeChooser .tableBtnGroup > .btn-group:not(:last-child) > .chooseCustomerBtn,
+#homeChooser .btn-group > .tableBtnGroup:not(:last-child) > .chooseCustomerBtn,
+#homeChooser .tableBtnGroup > .tableBtnGroup:not(:last-child) > .chooseCustomerBtn,
+#homeChooser .btn-group > .btn-group:not(:last-child) > .chooseAdminBtn,
+#homeChooser .tableBtnGroup > .btn-group:not(:last-child) > .chooseAdminBtn,
+#homeChooser .btn-group > .tableBtnGroup:not(:last-child) > .chooseAdminBtn,
+#homeChooser .tableBtnGroup > .tableBtnGroup:not(:last-child) > .chooseAdminBtn {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-.btn-group > .btn:nth-child(n + 3), .btn-group > .addUserBtn:nth-child(n + 3), .btn-group > .backToHomeBtn:nth-child(n + 3), .btn-group > .chooseBtn:nth-child(n + 3), #homeChooser .btn-group > .chooseCustomerBtn:nth-child(n + 3), #homeChooser .btn-group > .chooseAdminBtn:nth-child(n + 3),
+.btn-group > .btn:nth-child(n + 3), .tableBtnGroup > .btn:nth-child(n + 3), .btn-group > .addUserBtn:nth-child(n + 3), .tableBtnGroup > .addUserBtn:nth-child(n + 3), .btn-group > .backToHomeBtn:nth-child(n + 3), .tableBtnGroup > .backToHomeBtn:nth-child(n + 3), .btn-group > .chooseBtn:nth-child(n + 3), .tableBtnGroup > .chooseBtn:nth-child(n + 3), #homeChooser .btn-group > .chooseCustomerBtn:nth-child(n + 3), #homeChooser .tableBtnGroup > .chooseCustomerBtn:nth-child(n + 3), #homeChooser .btn-group > .chooseAdminBtn:nth-child(n + 3), #homeChooser .tableBtnGroup > .chooseAdminBtn:nth-child(n + 3),
 .btn-group > :not(.btn-check) + .btn,
+.tableBtnGroup > :not(.btn-check) + .btn,
 .btn-group > :not(.btn-check) + .addUserBtn,
+.tableBtnGroup > :not(.btn-check) + .addUserBtn,
 .btn-group > :not(.btn-check) + .backToHomeBtn,
+.tableBtnGroup > :not(.btn-check) + .backToHomeBtn,
 .btn-group > :not(.btn-check) + .chooseBtn,
+.tableBtnGroup > :not(.btn-check) + .chooseBtn,
 #homeChooser .btn-group > :not(.btn-check) + .chooseCustomerBtn,
+#homeChooser .tableBtnGroup > :not(.btn-check) + .chooseCustomerBtn,
 #homeChooser .btn-group > :not(.btn-check) + .chooseAdminBtn,
+#homeChooser .tableBtnGroup > :not(.btn-check) + .chooseAdminBtn,
 .btn-group > .btn-group:not(:first-child) > .btn,
+.tableBtnGroup > .btn-group:not(:first-child) > .btn,
+.btn-group > .tableBtnGroup:not(:first-child) > .btn,
+.tableBtnGroup > .tableBtnGroup:not(:first-child) > .btn,
 .btn-group > .btn-group:not(:first-child) > .addUserBtn,
+.tableBtnGroup > .btn-group:not(:first-child) > .addUserBtn,
+.btn-group > .tableBtnGroup:not(:first-child) > .addUserBtn,
+.tableBtnGroup > .tableBtnGroup:not(:first-child) > .addUserBtn,
 .btn-group > .btn-group:not(:first-child) > .backToHomeBtn,
+.tableBtnGroup > .btn-group:not(:first-child) > .backToHomeBtn,
+.btn-group > .tableBtnGroup:not(:first-child) > .backToHomeBtn,
+.tableBtnGroup > .tableBtnGroup:not(:first-child) > .backToHomeBtn,
 .btn-group > .btn-group:not(:first-child) > .chooseBtn,
+.tableBtnGroup > .btn-group:not(:first-child) > .chooseBtn,
+.btn-group > .tableBtnGroup:not(:first-child) > .chooseBtn,
+.tableBtnGroup > .tableBtnGroup:not(:first-child) > .chooseBtn,
 #homeChooser .btn-group > .btn-group:not(:first-child) > .chooseCustomerBtn,
-#homeChooser .btn-group > .btn-group:not(:first-child) > .chooseAdminBtn {
+#homeChooser .tableBtnGroup > .btn-group:not(:first-child) > .chooseCustomerBtn,
+#homeChooser .btn-group > .tableBtnGroup:not(:first-child) > .chooseCustomerBtn,
+#homeChooser .tableBtnGroup > .tableBtnGroup:not(:first-child) > .chooseCustomerBtn,
+#homeChooser .btn-group > .btn-group:not(:first-child) > .chooseAdminBtn,
+#homeChooser .tableBtnGroup > .btn-group:not(:first-child) > .chooseAdminBtn,
+#homeChooser .btn-group > .tableBtnGroup:not(:first-child) > .chooseAdminBtn,
+#homeChooser .tableBtnGroup > .tableBtnGroup:not(:first-child) > .chooseAdminBtn {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
@@ -2847,27 +2922,41 @@ textarea.form-control-lg {
   align-items: flex-start;
   justify-content: center; }
   .btn-group-vertical > .btn, .btn-group-vertical > .addUserBtn, .btn-group-vertical > .backToHomeBtn, .btn-group-vertical > .chooseBtn, #homeChooser .btn-group-vertical > .chooseCustomerBtn, #homeChooser .btn-group-vertical > .chooseAdminBtn,
-  .btn-group-vertical > .btn-group {
+  .btn-group-vertical > .btn-group,
+  .btn-group-vertical > .tableBtnGroup {
     width: 100%; }
   .btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .addUserBtn:not(:first-child), .btn-group-vertical > .backToHomeBtn:not(:first-child), .btn-group-vertical > .chooseBtn:not(:first-child), #homeChooser .btn-group-vertical > .chooseCustomerBtn:not(:first-child), #homeChooser .btn-group-vertical > .chooseAdminBtn:not(:first-child),
-  .btn-group-vertical > .btn-group:not(:first-child) {
+  .btn-group-vertical > .btn-group:not(:first-child),
+  .btn-group-vertical > .tableBtnGroup:not(:first-child) {
     margin-top: -1px; }
   .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .addUserBtn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .backToHomeBtn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .chooseBtn:not(:last-child):not(.dropdown-toggle), #homeChooser .btn-group-vertical > .chooseCustomerBtn:not(:last-child):not(.dropdown-toggle), #homeChooser .btn-group-vertical > .chooseAdminBtn:not(:last-child):not(.dropdown-toggle),
   .btn-group-vertical > .btn-group:not(:last-child) > .btn,
+  .btn-group-vertical > .tableBtnGroup:not(:last-child) > .btn,
   .btn-group-vertical > .btn-group:not(:last-child) > .addUserBtn,
+  .btn-group-vertical > .tableBtnGroup:not(:last-child) > .addUserBtn,
   .btn-group-vertical > .btn-group:not(:last-child) > .backToHomeBtn,
+  .btn-group-vertical > .tableBtnGroup:not(:last-child) > .backToHomeBtn,
   .btn-group-vertical > .btn-group:not(:last-child) > .chooseBtn,
+  .btn-group-vertical > .tableBtnGroup:not(:last-child) > .chooseBtn,
   #homeChooser .btn-group-vertical > .btn-group:not(:last-child) > .chooseCustomerBtn,
-  #homeChooser .btn-group-vertical > .btn-group:not(:last-child) > .chooseAdminBtn {
+  #homeChooser .btn-group-vertical > .tableBtnGroup:not(:last-child) > .chooseCustomerBtn,
+  #homeChooser .btn-group-vertical > .btn-group:not(:last-child) > .chooseAdminBtn,
+  #homeChooser .btn-group-vertical > .tableBtnGroup:not(:last-child) > .chooseAdminBtn {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0; }
   .btn-group-vertical > .btn ~ .btn, .btn-group-vertical > .addUserBtn ~ .btn, .btn-group-vertical > .btn ~ .addUserBtn, .btn-group-vertical > .addUserBtn ~ .addUserBtn, .btn-group-vertical > .backToHomeBtn ~ .btn, .btn-group-vertical > .backToHomeBtn ~ .addUserBtn, .btn-group-vertical > .btn ~ .backToHomeBtn, .btn-group-vertical > .addUserBtn ~ .backToHomeBtn, .btn-group-vertical > .backToHomeBtn ~ .backToHomeBtn, .btn-group-vertical > .chooseBtn ~ .btn, .btn-group-vertical > .chooseBtn ~ .addUserBtn, .btn-group-vertical > .chooseBtn ~ .backToHomeBtn, #homeChooser .btn-group-vertical > .chooseCustomerBtn ~ .btn, #homeChooser .btn-group-vertical > .chooseCustomerBtn ~ .addUserBtn, #homeChooser .btn-group-vertical > .chooseCustomerBtn ~ .backToHomeBtn, #homeChooser .btn-group-vertical > .chooseAdminBtn ~ .btn, #homeChooser .btn-group-vertical > .chooseAdminBtn ~ .addUserBtn, #homeChooser .btn-group-vertical > .chooseAdminBtn ~ .backToHomeBtn, .btn-group-vertical > .btn ~ .chooseBtn, .btn-group-vertical > .addUserBtn ~ .chooseBtn, .btn-group-vertical > .backToHomeBtn ~ .chooseBtn, #homeChooser .btn-group-vertical > .btn ~ .chooseCustomerBtn, #homeChooser .btn-group-vertical > .addUserBtn ~ .chooseCustomerBtn, #homeChooser .btn-group-vertical > .backToHomeBtn ~ .chooseCustomerBtn, #homeChooser .btn-group-vertical > .btn ~ .chooseAdminBtn, #homeChooser .btn-group-vertical > .addUserBtn ~ .chooseAdminBtn, #homeChooser .btn-group-vertical > .backToHomeBtn ~ .chooseAdminBtn, .btn-group-vertical > .chooseBtn ~ .chooseBtn, #homeChooser .btn-group-vertical > .chooseCustomerBtn ~ .chooseBtn, #homeChooser .btn-group-vertical > .chooseBtn ~ .chooseCustomerBtn, #homeChooser .btn-group-vertical > .chooseCustomerBtn ~ .chooseCustomerBtn, #homeChooser .btn-group-vertical > .chooseAdminBtn ~ .chooseBtn, #homeChooser .btn-group-vertical > .chooseAdminBtn ~ .chooseCustomerBtn, #homeChooser .btn-group-vertical > .chooseBtn ~ .chooseAdminBtn, #homeChooser .btn-group-vertical > .chooseCustomerBtn ~ .chooseAdminBtn, #homeChooser .btn-group-vertical > .chooseAdminBtn ~ .chooseAdminBtn,
   .btn-group-vertical > .btn-group:not(:first-child) > .btn,
+  .btn-group-vertical > .tableBtnGroup:not(:first-child) > .btn,
   .btn-group-vertical > .btn-group:not(:first-child) > .addUserBtn,
+  .btn-group-vertical > .tableBtnGroup:not(:first-child) > .addUserBtn,
   .btn-group-vertical > .btn-group:not(:first-child) > .backToHomeBtn,
+  .btn-group-vertical > .tableBtnGroup:not(:first-child) > .backToHomeBtn,
   .btn-group-vertical > .btn-group:not(:first-child) > .chooseBtn,
+  .btn-group-vertical > .tableBtnGroup:not(:first-child) > .chooseBtn,
   #homeChooser .btn-group-vertical > .btn-group:not(:first-child) > .chooseCustomerBtn,
-  #homeChooser .btn-group-vertical > .btn-group:not(:first-child) > .chooseAdminBtn {
+  #homeChooser .btn-group-vertical > .tableBtnGroup:not(:first-child) > .chooseCustomerBtn,
+  #homeChooser .btn-group-vertical > .btn-group:not(:first-child) > .chooseAdminBtn,
+  #homeChooser .btn-group-vertical > .tableBtnGroup:not(:first-child) > .chooseAdminBtn {
     border-top-left-radius: 0;
     border-top-right-radius: 0; }
 
@@ -4957,7 +5046,7 @@ textarea.form-control-lg {
 .w-75 {
   width: 75% !important; }
 
-.w-100, .addUserBtn {
+.w-100, .tableBtnGroup, .addUserBtn {
   width: 100% !important; }
 
 .w-auto {

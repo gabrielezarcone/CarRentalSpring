@@ -84,3 +84,8 @@ $primary-color: #335;
 .addUserBtn i{
   @extend .fs-4;
 }
+
+.tableBtnGroup{
+  @extend .btn-group;
+  @extend .w-100;
+}

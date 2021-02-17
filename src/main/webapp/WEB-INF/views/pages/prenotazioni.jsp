@@ -21,7 +21,7 @@
                     <td>${prenotazione.auto.costruttore} ${prenotazione.auto.modello}</td>
                     <c:choose>
                         <c:when test='${prenotazione.stato eq "PENDING"}'>
-                            <td><div class="btn-group w-100" role="group">
+                            <td><div class="tableBtnGroup" role="group">
                                 <button type="button" class="btn btn-primary" onclick="approvaPrenotazione(${prenotazione.id})">Accetta</button>
                                 <button type="button" class="btn btn-dark" onclick="rifiutaPrenotazione(${prenotazione.id})">Rifiuta</button>
                             </td>
