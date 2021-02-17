@@ -46,3 +46,11 @@ function modificaPassword(){
         form.action += "/true";
     }
 }
+
+function cercaUtente(urlListaUtenti){
+    event.preventDefault();
+    let filtro = document.getElementById("filtroRicercaUtente").value;
+    let testo = document.getElementById("testoRicercaUtente").value;
+    let url = urlListaUtenti+"/cerca/"+filtro+"/"+testo
+    location.replace(url)
+}
