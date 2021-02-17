@@ -54,13 +54,13 @@ $primary-color: #335;
   @extend .btn-danger;
 }
 
-#allUsersTable{
+.styleTable{
   @extend .table;
   @extend .table-bordered;
   @extend .mt-4;
   @extend .align-middle;
 }
-#allUsersTable thead{
+.styleTable thead{
   @extend .table-dark;
   @extend .align-middle;
 }

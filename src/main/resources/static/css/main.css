@@ -1296,7 +1296,7 @@ progress {
   .gy-xxl-5 {
     --bs-gutter-y: 3rem; } }
 
-.table, #allUsersTable {
+.table, .styleTable {
   --bs-table-bg: transparent;
   --bs-table-striped-color: #212529;
   --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
@@ -1309,16 +1309,16 @@ progress {
   color: #212529;
   vertical-align: top;
   border-color: #dee2e6; }
-  .table > :not(caption) > * > *, #allUsersTable > :not(caption) > * > * {
+  .table > :not(caption) > * > *, .styleTable > :not(caption) > * > * {
     padding: 0.5rem 0.5rem;
     background-color: var(--bs-table-bg);
     background-image: linear-gradient(var(--bs-table-accent-bg), var(--bs-table-accent-bg));
     border-bottom-width: 1px; }
-  .table > tbody, #allUsersTable > tbody {
+  .table > tbody, .styleTable > tbody {
     vertical-align: inherit; }
-  .table > thead, #allUsersTable > thead {
+  .table > thead, .styleTable > thead {
     vertical-align: bottom; }
-  .table > :not(:last-child) > :last-child > *, #allUsersTable > :not(:last-child) > :last-child > * {
+  .table > :not(:last-child) > :last-child > *, .styleTable > :not(:last-child) > :last-child > * {
     border-bottom-color: currentColor; }
 
 .caption-top {
@@ -1327,9 +1327,9 @@ progress {
 .table-sm > :not(caption) > * > * {
   padding: 0.25rem 0.25rem; }
 
-.table-bordered > :not(caption) > *, #allUsersTable > :not(caption) > * {
+.table-bordered > :not(caption) > *, .styleTable > :not(caption) > * {
   border-width: 1px 0; }
-  .table-bordered > :not(caption) > * > *, #allUsersTable > :not(caption) > * > * {
+  .table-bordered > :not(caption) > * > *, .styleTable > :not(caption) > * > * {
     border-width: 0 1px; }
 
 .table-borderless > :not(caption) > * > * {
@@ -1424,7 +1424,7 @@ progress {
   color: #000;
   border-color: rgba(129, 129, 129, 0.388); }
 
-.table-dark, #allUsersTable thead {
+.table-dark, .styleTable thead {
   --bs-table-bg: #212529;
   --bs-table-striped-bg: #2c3034;
   --bs-table-striped-color: #fff;
@@ -4738,7 +4738,7 @@ textarea.form-control-lg {
 .align-top {
   vertical-align: top !important; }
 
-.align-middle, #allUsersTable thead, #allUsersTable {
+.align-middle, .styleTable thead, .styleTable {
   vertical-align: middle !important; }
 
 .align-bottom {
@@ -5232,7 +5232,7 @@ textarea.form-control-lg {
 .mt-3 {
   margin-top: 1rem !important; }
 
-.mt-4, #allUsersTable, .errorDiv, #homeChooser {
+.mt-4, .styleTable, .errorDiv, #homeChooser {
   margin-top: 1.5rem !important; }
 
 .mt-5 {

@@ -4,7 +4,7 @@
 
 <a href="<c:url value="/admin/aggiungi"></c:url>" class="addUserBtn"><i class="bi-person-plus-fill"></i></a>
 <div class="table-responsive"> <%-- Per rendere responsive la tabella--%>
-    <table id="allUsersTable">
+    <table class="styleTable">
         <thead>
             <tr>
                 <th scope="col">Username</th>
