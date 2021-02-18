@@ -43,6 +43,17 @@ function eliminaPrenotazione(idPrenotazione){
         xhrCall(method,url,null,onloadfunction);
     }
 }
+function eliminaAuto(idAuto){
+    var confirmed = confirm("Sicuro di voler cancellare questa auto?");
+    if (confirmed){
+        var method = 'GET';
+        var url = './ajax/eliminaAuto/'+idAuto;
+        var onloadfunction = function () {
+            location.reload();
+        }
+        xhrCall(method,url,null,onloadfunction);
+    }
+}
 // --------------------------------------------------------------------------------------------------------------------------------------------
 
 

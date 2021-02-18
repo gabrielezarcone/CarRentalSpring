@@ -1296,7 +1296,7 @@ progress {
   .gy-xxl-5 {
     --bs-gutter-y: 3rem; } }
 
-.table, .styleTable {
+.table, .styleTableBase, .styleTableAuto, .styleTable {
   --bs-table-bg: transparent;
   --bs-table-striped-color: #212529;
   --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
@@ -1309,16 +1309,16 @@ progress {
   color: #212529;
   vertical-align: top;
   border-color: #dee2e6; }
-  .table > :not(caption) > * > *, .styleTable > :not(caption) > * > * {
+  .table > :not(caption) > * > *, .styleTableBase > :not(caption) > * > *, .styleTableAuto > :not(caption) > * > *, .styleTable > :not(caption) > * > * {
     padding: 0.5rem 0.5rem;
     background-color: var(--bs-table-bg);
     background-image: linear-gradient(var(--bs-table-accent-bg), var(--bs-table-accent-bg));
     border-bottom-width: 1px; }
-  .table > tbody, .styleTable > tbody {
+  .table > tbody, .styleTableBase > tbody, .styleTableAuto > tbody, .styleTable > tbody {
     vertical-align: inherit; }
-  .table > thead, .styleTable > thead {
+  .table > thead, .styleTableBase > thead, .styleTableAuto > thead, .styleTable > thead {
     vertical-align: bottom; }
-  .table > :not(:last-child) > :last-child > *, .styleTable > :not(:last-child) > :last-child > * {
+  .table > :not(:last-child) > :last-child > *, .styleTableBase > :not(:last-child) > :last-child > *, .styleTableAuto > :not(:last-child) > :last-child > *, .styleTable > :not(:last-child) > :last-child > * {
     border-bottom-color: currentColor; }
 
 .caption-top {
@@ -1327,9 +1327,9 @@ progress {
 .table-sm > :not(caption) > * > * {
   padding: 0.25rem 0.25rem; }
 
-.table-bordered > :not(caption) > *, .styleTable > :not(caption) > * {
+.table-bordered > :not(caption) > *, .styleTableBase > :not(caption) > *, .styleTableAuto > :not(caption) > *, .styleTable > :not(caption) > * {
   border-width: 1px 0; }
-  .table-bordered > :not(caption) > * > *, .styleTable > :not(caption) > * > * {
+  .table-bordered > :not(caption) > * > *, .styleTableBase > :not(caption) > * > *, .styleTableAuto > :not(caption) > * > *, .styleTable > :not(caption) > * > * {
     border-width: 0 1px; }
 
 .table-borderless > :not(caption) > * > * {
@@ -4834,7 +4834,7 @@ textarea.form-control-lg {
 .align-top {
   vertical-align: top !important; }
 
-.align-middle, .styleTable thead, .styleTable {
+.align-middle, .styleTableAuto thead, .styleTable thead, .styleTableBase, .styleTableAuto, .styleTable {
   vertical-align: middle !important; }
 
 .align-bottom {
@@ -5011,7 +5011,7 @@ textarea.form-control-lg {
 .border-info {
   border-color: #0dcaf0 !important; }
 
-.border-warning {
+.border-warning, .styleTableAuto thead {
   border-color: #ffc107 !important; }
 
 .border-danger {
@@ -5328,7 +5328,7 @@ textarea.form-control-lg {
 .mt-3 {
   margin-top: 1rem !important; }
 
-.mt-4, .styleTable, .errorDiv, #homeChooser {
+.mt-4, .styleTableBase, .styleTableAuto, .styleTable, .errorDiv, #homeChooser {
   margin-top: 1.5rem !important; }
 
 .mt-5 {
@@ -5661,7 +5661,7 @@ textarea.form-control-lg {
 .bg-info {
   background-color: #0dcaf0 !important; }
 
-.bg-warning {
+.bg-warning, .styleTableAuto thead {
   background-color: #ffc107 !important; }
 
 .bg-danger {
