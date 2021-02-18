@@ -1,6 +1,7 @@
 package com.zarconeg.carRental.service;
 
 import com.zarconeg.carRental.domain.Auto;
+import com.zarconeg.carRental.domain.Prenotazione;
 import com.zarconeg.carRental.repository.AutoDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,5 +29,9 @@ public class AutoService {
 
     public void elimina(Auto auto){
         dao.elimina(auto);
+    }
+
+    public List<Prenotazione> getPrenotazioni(Auto auto) {
+        return dao.getPrenotazioni(auto);
     }
 }

@@ -33,9 +33,10 @@
                 <sec:authorize access='hasRole("ADMIN")'>
                     <td>
                         <div class="tableBtnGroup" role="group">
+                            <c:url var="prenotazioniUrl" value="/admin/prenotazioni/auto/${auto.id}"/>
                             <a href="" type="button" class="btn btn-success">Modifica</a>
                             <button onclick='eliminaAuto("${auto.id}")' type="button" class="btn btn-danger">Elimina</button>
-                            <button onclick="" type="button" class="btn btn-primary">Prenotazioni</button>
+                            <a href="${prenotazioniUrl}" type="button" class="btn btn-primary">Prenotazioni</a>
                         </div>
                     </td>
                 </sec:authorize>

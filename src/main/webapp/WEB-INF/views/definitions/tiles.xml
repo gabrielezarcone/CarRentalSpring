@@ -42,6 +42,11 @@
         <put-attribute name="title" value="Lista prenotazioni" />
         <put-attribute name="body" value="/WEB-INF/views/pages/prenotazioni.jsp" />
     </definition>
+    <!-- Mostra prenotazioni auto -->
+    <definition name="prenotazioniAuto" extends="base">
+        <put-attribute name="title" value="Lista prenotazioni Auto" />
+        <put-attribute name="body" value="/WEB-INF/views/pages/prenotazioniAuto.jsp" />
+    </definition>
 
     <!-- Parco Auto -->
     <definition name="parcoAuto" extends="base">
