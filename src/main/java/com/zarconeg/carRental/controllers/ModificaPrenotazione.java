@@ -38,6 +38,16 @@ public class ModificaPrenotazione {
         return "modificaPrenotazione";
     }
 
+    @GetMapping("/customer/aggiungiPrenotazione")
+    public String modificaPrenotazione(ModelMap model){
+        Prenotazione prenotazione = new Prenotazione();
+        model.addAttribute("prenotazione", prenotazione);
+        return "modificaPrenotazione";
+    }
+
+
+
+    // Risposta al form ---------------------------------------------------------------------------------------------------------------------------
     @PostMapping("/customer/modificaPrenotazione/{idPrenotazione}")
     public String formModificaPrenotazione(@Valid Prenotazione prenotazione, BindingResult result, ModelMap model){
         if(result.hasErrors()) {
