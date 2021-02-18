@@ -94,4 +94,11 @@ public class Auto {
     public void setPrenotazione(Set<Prenotazione> prenotazione) {
         this.prenotazione = prenotazione;
     }
+
+
+    //-------- override ------------------------------------------------------------------
+    @Override
+    public String toString() {
+        return costruttore+" "+modello;
+    }
 }

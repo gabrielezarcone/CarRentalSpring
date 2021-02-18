@@ -10,6 +10,7 @@
             <th>Fine</th>
             <th>Auto</th>
             <th>Stato</th>
+            <th>Operazioni</th>
         </tr>
         </thead>
         <tbody>
@@ -29,8 +30,14 @@
                         <td class="table-danger">${prenotazione.stato}</td>
                     </c:when>
                 </c:choose>
+                <td>
+                    <div class="tableBtnGroup" role="group">
+                        <c:url var="modificaUrl" value="/customer/modificaPrenotazione/${prenotazione.id}"/>
+                        <a href="${modificaUrl}" type="button" class="btn btn-success">Modifica</a>
+                        <a href="" type="button" class="btn btn-danger">Elimina</a>
+                    </div>
+                </td>
             </tr>
-
         </c:forEach>
         </tbody>
     </table>

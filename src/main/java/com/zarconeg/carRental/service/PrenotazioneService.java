@@ -37,4 +37,8 @@ public class PrenotazioneService{
     public void updateStatoAsString(Prenotazione prenotazione, String statoString){
         dao.updateStatoAsString(prenotazione, statoString);
     }
+
+    public void aggiungiModifica(Prenotazione prenotazione) {
+        dao.aggiungiAggiorna(prenotazione);
+    }
 }
