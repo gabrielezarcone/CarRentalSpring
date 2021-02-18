@@ -55,6 +55,14 @@ public class HomeController {
         return "homeCustomer";
     }
 
+    @RequestMapping("customer/home/cerca/prenotazione/stato/{stato}")
+    public String customerHomePage(Principal principal, @PathVariable String stato, ModelMap model){
+        User user = getUserFromPrincipal(principal);
+        List<Prenotazione> prenotazioneList = prenotazioneService.cercaStato(user, stato);
+        initHomeCustomer(model, user, prenotazioneList);
+        return "homeCustomer";
+    }
+
 
     // Funzioni private --------------------------------------------------------------------------------------------------------------------------------------------
     private HashMap<Prenotazione, Boolean> mapEditablePrenotazioni(List<Prenotazione> prenotazioneList){

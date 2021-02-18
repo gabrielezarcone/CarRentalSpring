@@ -1,6 +1,7 @@
 package com.zarconeg.carRental.service;
 
 import com.zarconeg.carRental.domain.Prenotazione;
+import com.zarconeg.carRental.domain.User;
 import com.zarconeg.carRental.repository.PrenotazioneDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,5 +51,9 @@ public class PrenotazioneService{
         long diffInMillies = Math.abs(prenotazione.getInizio().getTime() - oggi.getTime());
         long diff = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
         return diff > 2;
+    }
+
+    public List<Prenotazione> cercaStato(User user, String stato) {
+        return dao.cercaStato(user,stato);
     }
 }

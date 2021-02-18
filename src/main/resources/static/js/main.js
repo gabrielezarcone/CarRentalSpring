@@ -55,6 +55,17 @@ function cercaUtente(urlListaUtenti){
     location.replace(url)
 }
 
+function cercaStatoPrenotazione(urlListaPrenotazioni){
+    event.preventDefault();
+    let filtro = document.getElementById("filtroStatoPrenotazione");
+    let testo = filtro.value;
+    var url = urlListaPrenotazioni+"/cerca/prenotazione/stato/"+testo
+    if (filtro.value==="tutti"){
+        url = urlListaPrenotazioni
+    }
+    location.replace(url)
+}
+
 function eliminaPrenotazione(idPrenotazione){
     var confirmed = confirm("Sicuro di voler cancellare questa prenotazione?");
     if (confirmed){

@@ -12,15 +12,17 @@
     <table class="styleTable">
         <thead>
         <tr>
+            <c:url var="url" value="/customer/home"/>
             <th>Inizio</th>
             <th>Fine</th>
             <th>Auto</th>
             <th>
-                <select id="filtroRicercaPrenotazione" class="form-select bg-dark text-white" aria-label="Default select example">
-                    <option selected>Stato</option>
-                    <option value="approvato">Approvato</option>
-                    <option value="pending">In attesa</option>
-                    <option value="rifiutato">Rifiutato</option>
+                <select onchange="cercaStatoPrenotazione('${url}')" id="filtroStatoPrenotazione" class="form-select bg-dark text-white" aria-label="Default select example">
+                    <option disabled selected>Stato</option>
+                    <option value="tutti">Tutti</option>
+                    <option value="APPROVATO">Approvato</option>
+                    <option value="PENDING">In attesa</option>
+                    <option value="RIFIUTATO">Rifiutato</option>
                 </select>
             </th>
             <th>Operazioni</th>
