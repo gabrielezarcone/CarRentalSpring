@@ -2,6 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<%-- Data di oggi --%>
+<jsp:useBean id="now" class="java.util.Date" />
+
+<h1>Buongiorno <strong>${loggedUser.name}</strong></h1>
+
 <div class="table-responsive">
     <table class="styleTable">
         <thead>
@@ -30,13 +35,22 @@
                         <td class="table-danger">${prenotazione.stato}</td>
                     </c:when>
                 </c:choose>
-                <td>
-                    <div class="tableBtnGroup" role="group">
-                        <c:url var="modificaUrl" value="/customer/modificaPrenotazione/${prenotazione.id}"/>
-                        <a href="${modificaUrl}" type="button" class="btn btn-success">Modifica</a>
-                        <button onclick="eliminaPrenotazione(${prenotazione.id})" type="button" class="btn btn-danger">Elimina</button>
-                    </div>
-                </td>
+                <c:choose>
+                    <c:when test="${mappaPrenotazioniUtente.get(prenotazione)}">
+                        <td>
+                            <div class="tableBtnGroup" role="group">
+                                <c:url var="modificaUrl" value="/customer/modificaPrenotazione/${prenotazione.id}"/>
+                                <a href="${modificaUrl}" type="button" class="btn btn-success">Modifica</a>
+                                <button onclick="eliminaPrenotazione(${prenotazione.id})" type="button" class="btn btn-danger">Elimina</button>
+                            </div>
+                        </td>
+                    </c:when>
+                    <c:otherwise>
+                        <td class="w-50">
+                            <div class="alert alert-light"><i class="bi bi-exclamation-triangle-fill"></i> Non possono essere fatte modifiche alla prenotazione se la data di inizio dista meno di 2 giorni dalla data odierna.</div>
+                        </td>
+                    </c:otherwise>
+                </c:choose>
             </tr>
         </c:forEach>
         </tbody>

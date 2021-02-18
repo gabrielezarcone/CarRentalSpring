@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @Service("prenotazioneService")
 @Transactional
@@ -40,5 +42,13 @@ public class PrenotazioneService{
 
     public void aggiungiModifica(Prenotazione prenotazione) {
         dao.aggiungiAggiorna(prenotazione);
+    }
+
+    // Restituisce true se dista più di due giorni da oggi ed è quindi modificabile
+    public boolean isEditable(Prenotazione prenotazione){
+        Date oggi = new Date();
+        long diffInMillies = Math.abs(prenotazione.getInizio().getTime() - oggi.getTime());
+        long diff = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
+        return diff > 2;
     }
 }
