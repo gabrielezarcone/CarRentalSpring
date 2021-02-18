@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link active" aria-current="page" href="<c:url value='/' />">Home</a>
-                <a class="nav-link" href="#">Parco Auto</a>
+                <a class="nav-link" href="<c:url value='/parcoAuto/' />">Parco Auto</a>
                 <a class="nav-link" href="#">Profilo</a>
             </div>
         </div>
