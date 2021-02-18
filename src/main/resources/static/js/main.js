@@ -54,3 +54,12 @@ function cercaUtente(urlListaUtenti){
     let url = urlListaUtenti+"/cerca/"+filtro+"/"+testo
     location.replace(url)
 }
+
+function eliminaPrenotazione(idPrenotazione){
+    var method = 'GET';
+    var url = './ajax/eliminaPrenotazione/'+idPrenotazione;
+    var onloadfunction = function () {
+        location.reload();
+    }
+    xhrCall(method,url,null,onloadfunction);
+}
