@@ -1,5 +1,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%-- Data di oggi --%>
@@ -15,9 +16,17 @@
             <c:url var="url" value="/customer/home"/>
             <th>Inizio</th>
             <th>Fine</th>
-            <th>Auto</th>
             <th>
-                <select onchange="cercaStatoPrenotazione('${url}')" id="filtroStatoPrenotazione" class="form-select bg-dark text-white" aria-label="Default select example">
+                <select onchange="cercaAutoPrenotazione('${url}')" id="filtroAutoPrenotazione" class="tableFilterDropdown">
+                    <option disabled selected>Auto</option>
+                    <option value="tutti">Tutti</option>
+                    <c:forEach var="auto" items="${autoList}">
+                        <option value="${auto.id}">${auto}</option>
+                    </c:forEach>
+                </select>
+            </th>
+            <th>
+                <select onchange="cercaStatoPrenotazione('${url}')" id="filtroStatoPrenotazione" class="tableFilterDropdown">
                     <option disabled selected>Stato</option>
                     <option value="tutti">Tutti</option>
                     <option value="APPROVATO">Approvato</option>
