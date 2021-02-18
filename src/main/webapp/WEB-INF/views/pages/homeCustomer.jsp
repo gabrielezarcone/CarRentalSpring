@@ -7,6 +7,7 @@
 
 <h1>Buongiorno <strong>${loggedUser.name}</strong></h1>
 
+<a href="<c:url value="/customer/aggiungiPrenotazione"></c:url>" class="addUserBtn"><i class="bi bi-bookmark-plus-fill"></i></a>
 <div class="table-responsive">
     <table class="styleTable">
         <thead>

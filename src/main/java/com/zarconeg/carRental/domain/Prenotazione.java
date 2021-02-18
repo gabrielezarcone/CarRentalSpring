@@ -34,7 +34,7 @@ public class Prenotazione implements Serializable {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "stato")
-    private Stato stato = Stato.PENDING;
+    private Stato stato = Stato.PENDING; // Una nuova prenotazione avrà di default lo stato PENDING
 
     @ManyToOne
     @JoinColumn(name = "auto")
