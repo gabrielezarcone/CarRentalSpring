@@ -15,20 +15,15 @@
             <th>Inizio</th>
             <th>Fine</th>
             <th>Auto</th>
-            <th>Stato</th>
-            <th scope="col">
-                <c:url value="/customer/home" var="url"/>
-                <form class="d-flex"  onsubmit="return cercaPrenotazione('${url}');">
-                    <input id="testoRicercaPrenotazione" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search">
-                    <select id="filtroRicercaPrenotazione" class="form-select me-2 w-50 bg-dark text-white" aria-label="Default select example">
-                        <option selected value="username">Auto</option>
-                        <option value="name">Stato</option>
-                        <option value="inizio">Inizio</option>
-                        <option value="fine">Fine</option>
-                    </select>
-                    <button class="btn btn-outline-primary" type="submit">Cerca</button>
-                </form>
+            <th>
+                <select id="filtroRicercaPrenotazione" class="form-select bg-dark text-white" aria-label="Default select example">
+                    <option selected>Stato</option>
+                    <option value="approvato">Approvato</option>
+                    <option value="pending">In attesa</option>
+                    <option value="rifiutato">Rifiutato</option>
+                </select>
             </th>
+            <th>Operazioni</th>
         </tr>
         </thead>
         <tbody>
