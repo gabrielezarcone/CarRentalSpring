@@ -2,6 +2,7 @@ package com.zarconeg.carRental.controllers;
 
 import com.zarconeg.carRental.domain.Prenotazione;
 import com.zarconeg.carRental.domain.User;
+import com.zarconeg.carRental.service.PrenotazioneService;
 import com.zarconeg.carRental.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,14 +13,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.security.Principal;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping(value = "/")
 public class HomeController {
     @Autowired
     UserService userService;
+    @Autowired
+    PrenotazioneService prenotazioneService;
 
     @RequestMapping()
     public ModelAndView renderHomePage(ModelMap model){
@@ -47,8 +51,19 @@ public class HomeController {
     public String customerHomePage(Principal principal, ModelMap model){
         String username = principal.getName();
         User user = userService.getByUsername(username);
-        List<Prenotazione> prenotazioneList = userService.getPrenotazioni(user);
+        HashMap<Prenotazione, Boolean> prenotazioneMap= mapEditablePrenotazioni(user);
+        List<Prenotazione> prenotazioneList = new ArrayList<>(prenotazioneMap.keySet());
         model.addAttribute("listaPrenotazioniUtente", prenotazioneList);
+        model.addAttribute("mappaPrenotazioniUtente", prenotazioneMap);
         return "homeCustomer";
+    }
+
+
+    // Funzioni private --------------------------------------------------------------------------------------------------------------------------------------------
+    private HashMap<Prenotazione, Boolean> mapEditablePrenotazioni(User user){
+        List<Prenotazione> prenotazioneList = userService.getPrenotazioni(user);
+        Map<Prenotazione, Boolean> map = prenotazioneList.stream().collect(
+                Collectors.toMap(Function.identity(), prenotazione -> prenotazioneService.isEditable(prenotazione)));
+        return new HashMap<>(map);
     }
 }
