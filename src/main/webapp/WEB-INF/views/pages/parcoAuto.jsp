@@ -34,7 +34,7 @@
                     <td>
                         <div class="tableBtnGroup" role="group">
                             <a href="" type="button" class="btn btn-success">Modifica</a>
-                            <button onclick="" type="button" class="btn btn-danger">Elimina</button>
+                            <button onclick='eliminaAuto("${auto.id}")' type="button" class="btn btn-danger">Elimina</button>
                             <button onclick="" type="button" class="btn btn-primary">Prenotazioni</button>
                         </div>
                     </td>
