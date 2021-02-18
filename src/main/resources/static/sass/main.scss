@@ -54,15 +54,28 @@ $primary-color: #335;
   @extend .btn-danger;
 }
 
-.styleTable{
+.styleTableBase{
   @extend .table;
   @extend .table-bordered;
   @extend .mt-4;
   @extend .align-middle;
 }
+
+.styleTable{
+  @extend .styleTableBase;
+}
 .styleTable thead{
   @extend .table-dark;
   @extend .align-middle;
+}
+
+.styleTableAuto{
+  @extend .styleTableBase;
+}
+.styleTableAuto thead{
+  @extend .align-middle;
+  @extend .bg-warning;
+  @extend .border-warning;
 }
 
 .formRow{
