@@ -89,3 +89,9 @@ $primary-color: #335;
   @extend .btn-group;
   @extend .w-100;
 }
+
+.tableFilterDropdown{
+  @extend .form-select;
+  @extend .bg-dark;
+  @extend .text-white;
+}
