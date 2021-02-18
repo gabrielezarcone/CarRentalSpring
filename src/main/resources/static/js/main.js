@@ -56,10 +56,13 @@ function cercaUtente(urlListaUtenti){
 }
 
 function eliminaPrenotazione(idPrenotazione){
-    var method = 'GET';
-    var url = './ajax/eliminaPrenotazione/'+idPrenotazione;
-    var onloadfunction = function () {
-        location.reload();
+    var confirmed = confirm("Sicuro di voler cancellare questa prenotazione?");
+    if (confirmed){
+        var method = 'GET';
+        var url = './ajax/eliminaPrenotazione/'+idPrenotazione;
+        var onloadfunction = function () {
+            location.reload();
+        }
+        xhrCall(method,url,null,onloadfunction);
     }
-    xhrCall(method,url,null,onloadfunction);
 }
