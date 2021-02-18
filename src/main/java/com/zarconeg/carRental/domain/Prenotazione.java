@@ -1,14 +1,16 @@
 package com.zarconeg.carRental.domain;
 
 import org.hibernate.annotations.ColumnDefault;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "prenotazione")
-public class Prenotazione {
+public class Prenotazione implements Serializable {
     public enum Stato{
         RIFIUTATO,
         PENDING,
@@ -21,10 +23,12 @@ public class Prenotazione {
     private long id;
 
     @NotNull
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "inizio", nullable = false)
     private Date inizio;
 
     @NotNull
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "fine", nullable = false)
     private Date fine;
 
