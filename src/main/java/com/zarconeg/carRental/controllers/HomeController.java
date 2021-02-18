@@ -12,7 +12,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.security.Principal;
@@ -73,6 +72,14 @@ public class HomeController {
     public String customerHomePage(Principal principal, @PathVariable String stato, ModelMap model){
         User user = getUserFromPrincipal(principal);
         List<Prenotazione> prenotazioneList = prenotazioneService.cercaStato(user, stato);
+        initHomeCustomer(model, user, prenotazioneList);
+        return "homeCustomer";
+    }
+    @RequestMapping("customer/home/cerca/prenotazione/auto/{autoId}")
+    public String customerHomePage(Principal principal, @PathVariable long autoId, ModelMap model){
+        User user = getUserFromPrincipal(principal);
+        Auto auto = autoService.getById(autoId);
+        List<Prenotazione> prenotazioneList = prenotazioneService.cercaAuto(user, auto);
         initHomeCustomer(model, user, prenotazioneList);
         return "homeCustomer";
     }

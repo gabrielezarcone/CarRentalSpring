@@ -30,6 +30,19 @@ function rifiutaPrenotazione(idPrenotazione){
     let url = './ajax/rifiuta/'+idPrenotazione;
     cambiaStatoPrenotazione(url);
 }
+
+
+function eliminaPrenotazione(idPrenotazione){
+    var confirmed = confirm("Sicuro di voler cancellare questa prenotazione?");
+    if (confirmed){
+        var method = 'GET';
+        var url = './ajax/eliminaPrenotazione/'+idPrenotazione;
+        var onloadfunction = function () {
+            location.reload();
+        }
+        xhrCall(method,url,null,onloadfunction);
+    }
+}
 // --------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -47,6 +60,7 @@ function modificaPassword(){
     }
 }
 
+// Ricerca ------------------------------------------------------------------------------------------------------------------------
 function cercaUtente(urlListaUtenti){
     event.preventDefault();
     let filtro = document.getElementById("filtroRicercaUtente").value;
@@ -66,14 +80,13 @@ function cercaStatoPrenotazione(urlListaPrenotazioni){
     location.replace(url)
 }
 
-function eliminaPrenotazione(idPrenotazione){
-    var confirmed = confirm("Sicuro di voler cancellare questa prenotazione?");
-    if (confirmed){
-        var method = 'GET';
-        var url = './ajax/eliminaPrenotazione/'+idPrenotazione;
-        var onloadfunction = function () {
-            location.reload();
-        }
-        xhrCall(method,url,null,onloadfunction);
+function cercaAutoPrenotazione(urlListaPrenotazioni){
+    event.preventDefault();
+    let filtro = document.getElementById("filtroAutoPrenotazione");
+    let testo = filtro.value;
+    var url = urlListaPrenotazioni+"/cerca/prenotazione/auto/"+testo
+    if (filtro.value==="tutti"){
+        url = urlListaPrenotazioni
     }
+    location.replace(url)
 }

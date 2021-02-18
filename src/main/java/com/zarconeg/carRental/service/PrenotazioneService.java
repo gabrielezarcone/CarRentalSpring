@@ -1,5 +1,6 @@
 package com.zarconeg.carRental.service;
 
+import com.zarconeg.carRental.domain.Auto;
 import com.zarconeg.carRental.domain.Prenotazione;
 import com.zarconeg.carRental.domain.User;
 import com.zarconeg.carRental.repository.PrenotazioneDao;
@@ -55,5 +56,9 @@ public class PrenotazioneService{
 
     public List<Prenotazione> cercaStato(User user, String stato) {
         return dao.cercaStato(user,stato);
+    }
+
+    public List<Prenotazione> cercaAuto(User user, Auto auto) {
+        return dao.cercaAuto(user, auto);
     }
 }
