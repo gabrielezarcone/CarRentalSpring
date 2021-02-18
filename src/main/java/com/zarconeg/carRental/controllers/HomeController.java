@@ -49,21 +49,15 @@ public class HomeController {
     // CUSTOMER --------------------------------------------------------------------------------------------------------------------------------------------
     @RequestMapping("customer/home")
     public String customerHomePage(Principal principal, ModelMap model){
-        String username = principal.getName();
-        User user = userService.getByUsername(username);
-        HashMap<Prenotazione, Boolean> prenotazioneMap= mapEditablePrenotazioni(user);
-        List<Prenotazione> prenotazioneList = new ArrayList<>(prenotazioneMap.keySet()); // trasformo il Set ritornato da keySet in una List
-        // alla view passo sia la lista che la mappa
-        model.addAttribute("loggedUser",user);
-        model.addAttribute("listaPrenotazioniUtente", prenotazioneList);
-        model.addAttribute("mappaPrenotazioniUtente", prenotazioneMap);
+        User user = getUserFromPrincipal(principal);
+        List<Prenotazione> prenotazioneList = userService.getPrenotazioni(user);
+        initHomeCustomer(model, user, prenotazioneList);
         return "homeCustomer";
     }
 
 
     // Funzioni private --------------------------------------------------------------------------------------------------------------------------------------------
-    private HashMap<Prenotazione, Boolean> mapEditablePrenotazioni(User user){
-        List<Prenotazione> prenotazioneList = userService.getPrenotazioni(user);
+    private HashMap<Prenotazione, Boolean> mapEditablePrenotazioni(List<Prenotazione> prenotazioneList){
         // Trasformo la lista delle prenotazioni di quell'utente in una mappa che per ogni prenotazione(chiave) mi dice se l'inizio di quella prenotazione dista meno di due giorni da oggi o meno (valore booleano)
         Map<Prenotazione, Boolean> map = prenotazioneList.stream().collect(
                 // toMap crea un elemento della mappa per ogni elemento della lista di partenza
@@ -71,5 +65,18 @@ public class HomeController {
                 // il valore invece lo genero usando quello stesso elemento e passandolo a prenotazioneService.isEditable
                 Collectors.toMap(Function.identity(), prenotazione -> prenotazioneService.isEditable(prenotazione)));
         return new HashMap<>(map);
+    }
+
+    private User getUserFromPrincipal(Principal principal) {
+        String username = principal.getName();
+        return userService.getByUsername(username);
+    }
+
+    private void initHomeCustomer(ModelMap model, User user, List<Prenotazione> prenotazioneList) {
+        HashMap<Prenotazione, Boolean> prenotazioneMap= mapEditablePrenotazioni(prenotazioneList);
+        // alla view passo sia la lista che la mappa
+        model.addAttribute("loggedUser", user);
+        model.addAttribute("listaPrenotazioniUtente", prenotazioneList);
+        model.addAttribute("mappaPrenotazioniUtente", prenotazioneMap);
     }
 }
