@@ -5,6 +5,8 @@
 <%-- Data di oggi --%>
 <jsp:useBean id="now" class="java.util.Date" />
 
+<h1>Buongiorno <strong>${loggedUser.name}</strong></h1>
+
 <div class="table-responsive">
     <table class="styleTable">
         <thead>
@@ -45,7 +47,7 @@
                     </c:when>
                     <c:otherwise>
                         <td class="w-50">
-                            <div class="alert alert-light">Non possono essere fatte modifiche alla prenotazione se la data di inizio dista meno di 2 giorni dalla data odierna.</div>
+                            <div class="alert alert-light"><i class="bi bi-exclamation-triangle-fill"></i> Non possono essere fatte modifiche alla prenotazione se la data di inizio dista meno di 2 giorni dalla data odierna.</div>
                         </td>
                     </c:otherwise>
                 </c:choose>

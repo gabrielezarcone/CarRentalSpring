@@ -53,6 +53,7 @@ public class HomeController {
         User user = userService.getByUsername(username);
         HashMap<Prenotazione, Boolean> prenotazioneMap= mapEditablePrenotazioni(user);
         List<Prenotazione> prenotazioneList = new ArrayList<>(prenotazioneMap.keySet());
+        model.addAttribute("loggedUser",user);
         model.addAttribute("listaPrenotazioniUtente", prenotazioneList);
         model.addAttribute("mappaPrenotazioniUtente", prenotazioneMap);
         return "homeCustomer";
