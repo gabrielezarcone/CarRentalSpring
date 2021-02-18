@@ -52,7 +52,8 @@ public class HomeController {
         String username = principal.getName();
         User user = userService.getByUsername(username);
         HashMap<Prenotazione, Boolean> prenotazioneMap= mapEditablePrenotazioni(user);
-        List<Prenotazione> prenotazioneList = new ArrayList<>(prenotazioneMap.keySet());
+        List<Prenotazione> prenotazioneList = new ArrayList<>(prenotazioneMap.keySet()); // trasformo il Set ritornato da keySet in una List
+        // alla view passo sia la lista che la mappa
         model.addAttribute("loggedUser",user);
         model.addAttribute("listaPrenotazioniUtente", prenotazioneList);
         model.addAttribute("mappaPrenotazioniUtente", prenotazioneMap);
@@ -63,7 +64,11 @@ public class HomeController {
     // Funzioni private --------------------------------------------------------------------------------------------------------------------------------------------
     private HashMap<Prenotazione, Boolean> mapEditablePrenotazioni(User user){
         List<Prenotazione> prenotazioneList = userService.getPrenotazioni(user);
+        // Trasformo la lista delle prenotazioni di quell'utente in una mappa che per ogni prenotazione(chiave) mi dice se l'inizio di quella prenotazione dista meno di due giorni da oggi o meno (valore booleano)
         Map<Prenotazione, Boolean> map = prenotazioneList.stream().collect(
+                // toMap crea un elemento della mappa per ogni elemento della lista di partenza
+                // con Function.identity() sto dicendo che la key deve essere lo stesso identico elemento della lista da cui parto
+                // il valore invece lo genero usando quello stesso elemento e passandolo a prenotazioneService.isEditable
                 Collectors.toMap(Function.identity(), prenotazione -> prenotazioneService.isEditable(prenotazione)));
         return new HashMap<>(map);
     }
