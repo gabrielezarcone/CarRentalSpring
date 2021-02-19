@@ -21,6 +21,10 @@
                 <c:url value="/logout" var="logout"/>
                 <a href="${logout}" class="btn btn-danger">Logout</a>
             </sec:authorize>
+            <sec:authorize access="!isAuthenticated()">
+                <c:url value="/login" var="login"/>
+                <a href="${login}" class="btn btn-dark">Login</a>
+            </sec:authorize>
         </div>
     </div>
 </nav>
