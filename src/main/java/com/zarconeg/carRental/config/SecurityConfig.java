@@ -32,6 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers( "/").permitAll()
                 .antMatchers("/admin/**").access("hasRole('ADMIN')") // NB nel db deve essere salvato come ROLE_ADMIN
+                .antMatchers("/**/eliminaAuto/**").access("hasRole('ADMIN')")
                 .antMatchers("/customer/**").access("hasRole('ADMIN') or hasRole('CUSTOMER')")
                 .and().formLogin()
                 .and().exceptionHandling().accessDeniedPage("/Access_Denied");
