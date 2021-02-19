@@ -49,8 +49,11 @@ public class ModificaUserController {
     @PostMapping(value = {
             "admin/modifica",
             "admin/aggiungi",
+            "profilo",
             "admin/modifica/{conPsw}", // Aggiungo una PathVariable opzionale. Devo comunque mappare tutti i path (sia con che senza)
-            "admin/aggiungi/{conPsw}"})
+            "admin/aggiungi/{conPsw}",
+            "profilo/{conPsw}"
+    })
     public String actionAdminModificaUser(@Valid User user, BindingResult result, @PathVariable Optional<Boolean> conPsw, ModelMap model){
         if(result.hasErrors()) {
             roleListModel(model);
