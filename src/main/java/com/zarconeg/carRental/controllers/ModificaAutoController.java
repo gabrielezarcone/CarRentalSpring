@@ -28,6 +28,13 @@ public class ModificaAutoController {
         return "modificaAuto";
     }
 
+    @GetMapping("aggiungiAuto")
+    public String aggiungiAuto(ModelMap model){
+        Auto auto = new Auto();
+        model.addAttribute("auto", auto);
+        return "modificaAuto";
+    }
+
     // Gestione forms ------------------------------------------------------------------------------------
     @PostMapping("modificaAuto/{idAuto}")
     public String formModificaAuto(@Valid Auto auto, BindingResult result, ModelMap model){

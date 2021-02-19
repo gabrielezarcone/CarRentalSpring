@@ -4,7 +4,14 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<h1>Modifica <strong>${auto}</strong></h1>
+<c:choose>
+    <c:when test="${not (auto.costruttore eq null)}">
+        <h1>Modifica <strong>${auto}</strong></h1>
+    </c:when>
+    <c:otherwise>
+        <h1>Nuova auto</h1>
+    </c:otherwise>
+</c:choose>
 
 <form:form method="post" modelAttribute="auto">
     <form:input path="id" type="hidden"/>
