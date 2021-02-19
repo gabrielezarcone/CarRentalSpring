@@ -6,6 +6,7 @@
 
 <h1><strong>Parco Auto</strong></h1>
 
+<a href="<c:url value="/admin/aggiungiAuto"/>" class="addUserBtn"><i class="bi bi-key-fill"></i></a>
 <div class="table-responsive">
     <table class="styleTableAuto">
         <thead>
