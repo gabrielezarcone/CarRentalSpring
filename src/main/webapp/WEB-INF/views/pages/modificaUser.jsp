@@ -59,7 +59,7 @@
     <div class="formRow">
         <label for="ruoli" class="col-sm-2 col-form-label">Ruoli</label>
         <div class="col">
-            <form:checkboxes path="ruoli" items="${roleList}" cssClass="form-check-input mx-2"/>
+            <form:checkboxes path="ruoli" items="${roleList}" cssClass="form-check-input mx-2" itemValue="id"/>
             <div class="has-error">
                 <form:errors path="ruoli" cssClass="badge bg-danger"/>
             </div>

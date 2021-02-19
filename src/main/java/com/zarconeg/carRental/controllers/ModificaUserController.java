@@ -1,18 +1,22 @@
 package com.zarconeg.carRental.controllers;
 
+import com.zarconeg.carRental.converters.RoleSetPropertyEditor;
 import com.zarconeg.carRental.domain.Ruolo;
 import com.zarconeg.carRental.domain.User;
 import com.zarconeg.carRental.service.RuoloService;
 import com.zarconeg.carRental.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomCollectionEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/")
@@ -61,6 +65,18 @@ public class ModificaUserController {
         return "home";
     }
 
+//--InitBinder----------------------------------------------------------------------------------------------------------------
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        // Trasformo le stringhe ricevute dal campo ruoli in elementi del Set<Ruolo> quando ricevo i dati dal form prima che vengano elaborati dal controller
+        binder.registerCustomEditor(Set.class, "ruoli", new CustomCollectionEditor(Set.class){
+            @Override
+            protected Object convertElement(Object element) {
+                long id = Long.parseLong((String) element);
+                return ruoloService.getById(id);
+            }
+        });
+    }
 
 //------------------------------------------------------------------------------------------------------------------
     private void roleListModel(ModelMap model) {
