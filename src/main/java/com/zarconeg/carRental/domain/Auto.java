@@ -1,6 +1,8 @@
 package com.zarconeg.carRental.domain;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -31,6 +33,7 @@ public class Auto {
     private String tipologia;
 
     @NotNull
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "immatricolazione", nullable = false)
     private Date immatricolazione;
 

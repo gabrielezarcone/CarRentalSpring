@@ -34,4 +34,8 @@ public class AutoService {
     public List<Prenotazione> getPrenotazioni(Auto auto) {
         return dao.getPrenotazioni(auto);
     }
+
+    public void aggiungiAggiorna(Auto auto) {
+        dao.aggiungiAggiorna(auto);
+    }
 }
