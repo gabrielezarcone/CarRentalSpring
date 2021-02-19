@@ -59,6 +59,12 @@
         <put-attribute name="body" value="/WEB-INF/views/pages/parcoAuto.jsp" />
     </definition>
 
+    <!-- Pagina profilo utente -->
+    <definition name="profilo" extends="base">
+        <put-attribute name="title" value="Profilo utente" />
+        <put-attribute name="body" value="/WEB-INF/views/pages/profilo.jsp" />
+    </definition>
+
 
 
     <!-- Pagine di errore ________________________________________________________________________________________________________________________ -->

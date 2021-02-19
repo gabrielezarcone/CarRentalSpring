@@ -19,6 +19,28 @@ public class Ruolo {
     private Set<User> users;
 
 
+    //-------- overrides ------------------------------------------------------------------
+    @Override
+    public int hashCode() {
+        return Long.valueOf(this.id).hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (! (obj instanceof Ruolo)) {
+            return false;
+        }
+        return this.id == ((Ruolo)obj).getId();
+    }
+
+    @Override
+    public String toString() {
+        return ruolo.substring(5);
+    }
+
     //-------- getter e setter ------------------------------------------------------------------
     public long getId() {
         return id;

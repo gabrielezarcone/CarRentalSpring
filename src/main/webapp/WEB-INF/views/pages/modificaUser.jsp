@@ -3,6 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <h1>Modifica user <strong>${user.username}</strong></h1>
 
@@ -54,14 +55,16 @@
             </div>
         </div>
     </div>
+    <sec:authorize access="hasRole('ADMIN')">
     <div class="formRow">
         <label for="ruoli" class="col-sm-2 col-form-label">Ruoli</label>
         <div class="col">
-            <form:checkboxes path="ruoli" items="${roleList}" cssClass="form-check-input mx-2"/>
+            <form:checkboxes path="ruoli" items="${roleList}" cssClass="form-check-input mx-2" itemValue="id"/>
             <div class="has-error">
                 <form:errors path="ruoli" cssClass="badge bg-danger"/>
             </div>
         </div>
     </div>
+    </sec:authorize>
     <input type="submit" class="btn btn-primary" value="Salva">
 </form:form>
