@@ -34,7 +34,8 @@
                     <td>
                         <div class="tableBtnGroup" role="group">
                             <c:url var="prenotazioniUrl" value="/admin/prenotazioni/auto/${auto.id}"/>
-                            <a href="" type="button" class="btn btn-success">Modifica</a>
+                            <c:url var="modificaAutoUrl" value="/admin/modificaAuto/${auto.id}"/>
+                            <a href="${modificaAutoUrl}" type="button" class="btn btn-success">Modifica</a>
                             <button onclick='eliminaAuto("${auto.id}")' type="button" class="btn btn-danger">Elimina</button>
                             <a href="${prenotazioniUrl}" type="button" class="btn btn-primary">Prenotazioni</a>
                         </div>

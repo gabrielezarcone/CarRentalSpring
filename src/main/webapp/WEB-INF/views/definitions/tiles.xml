@@ -37,6 +37,11 @@
         <put-attribute name="title" value="Modifica prenotazioni" />
         <put-attribute name="body" value="/WEB-INF/views/pages/modificaPrenotazione.jsp" />
     </definition>
+    <!-- Modifica auto -->
+    <definition name="modificaAuto" extends="base">
+        <put-attribute name="title" value="Modifica Auto" />
+        <put-attribute name="body" value="/WEB-INF/views/pages/modificaAuto.jsp" />
+    </definition>
     <!-- Mostra prenotazioni utente -->
     <definition name="prenotazioni" extends="base">
         <put-attribute name="title" value="Lista prenotazioni" />
