@@ -13,7 +13,7 @@
             <div class="navbar-nav">
                 <a class="nav-link active" aria-current="page" href="<c:url value='/' />">Home</a>
                 <a class="nav-link" href="<c:url value='/parcoAuto/' />">Parco Auto</a>
-                <a class="nav-link" href="#">Profilo</a>
+                <a class="nav-link" href="<c:url value='/profilo'/>">Profilo</a>
             </div>
         </div>
         <div class="d-flex">
