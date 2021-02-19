@@ -1,6 +1,5 @@
 package com.zarconeg.carRental.controllers;
 
-import com.zarconeg.carRental.converters.RoleSetPropertyEditor;
 import com.zarconeg.carRental.domain.Ruolo;
 import com.zarconeg.carRental.domain.User;
 import com.zarconeg.carRental.service.RuoloService;
