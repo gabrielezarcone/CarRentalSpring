@@ -19,12 +19,12 @@
     <header>
         <tiles:insertAttribute name="header"/>
     </header>
-    <div class="container">
-        <div class="row">
-            <section id="sideMenu" class="col-1">
+    <div class="container mx-0">
+        <div class="row vw-100">
+            <section id="sideMenu" class="col-2">
                 <tiles:insertAttribute name="menu"/>
             </section>
-            <section id="content" class="mt-4 col-11">
+            <section id="content" class="mt-4 col-10">
                 <tiles:insertAttribute name="body"/>
             </section>
         </div>
