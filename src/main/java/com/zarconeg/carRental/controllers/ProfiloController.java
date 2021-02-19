@@ -1,5 +1,6 @@
 package com.zarconeg.carRental.controllers;
 
+import com.zarconeg.carRental.domain.Ruolo;
 import com.zarconeg.carRental.domain.User;
 import com.zarconeg.carRental.service.RuoloService;
 import com.zarconeg.carRental.service.UserService;
@@ -25,8 +26,8 @@ public class ProfiloController {
     // Model mapping --------------------------------------------------------------------------------------------------------------
     @ModelAttribute("roleList")
     public void initializeAutoList(ModelMap model) {
-        List<String> roleNameList = ruoloService.getNameList();
-        model.addAttribute("roleList", roleNameList);
+        List<Ruolo> roleList = ruoloService.getList();
+        model.addAttribute("roleList", roleList);
     }
     @ModelAttribute("user")
     public void initializeLoggedUser(Principal principal, ModelMap model) {
