@@ -36,7 +36,10 @@ public class ModificaAutoController {
     }
 
     // Gestione forms ------------------------------------------------------------------------------------
-    @PostMapping("modificaAuto/{idAuto}")
+    @PostMapping(value = {
+            "modificaAuto/{idAuto}",
+            "aggiungiAuto"
+    })
     public String formModificaAuto(@Valid Auto auto, BindingResult result, ModelMap model){
         if(result.hasErrors()) {
             return modificaAuto(auto.getId(),model);
