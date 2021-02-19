@@ -65,7 +65,7 @@ public class ModificaUserController {
         else {
             userService.aggiungiAggiornaSenzaPassword(user);
         }
-        return "home";
+        return "redirect:/";
     }
 
 //--InitBinder----------------------------------------------------------------------------------------------------------------

@@ -7,6 +7,7 @@ import com.zarconeg.carRental.service.AutoService;
 import com.zarconeg.carRental.service.PrenotazioneService;
 import com.zarconeg.carRental.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -39,8 +40,20 @@ public class HomeController {
 
     // Home --------------------------------------------------------------------------------------------------------------------------------------------
     @RequestMapping()
-    public ModelAndView renderHomePage(ModelMap model){
-        return new ModelAndView("home", model);
+    public String renderHomePage(Authentication auth, ModelMap model){
+        if (auth==null){
+            return "redirect:/login";
+        }
+        else {
+            String roles = auth.getAuthorities().toString();
+            if (roles.contains("ROLE_ADMIN")){
+                return "redirect:/admin/home";
+            }
+            else if (roles.contains("ROLE_CUSTOMER")){
+                return "redirect:/customer/home";
+            }
+        }
+        return "redirect:/login";
     }
 
     // ADMIN --------------------------------------------------------------------------------------------------------------------------------------------
